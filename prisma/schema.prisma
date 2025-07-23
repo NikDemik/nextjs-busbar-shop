@@ -1,0 +1,68 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+// основной комплект (например, шинопровод 60А)
+model Product {
+  id          Int          @id @default(autoincrement())
+  name        String
+  slug        String       @unique
+  description String
+  imageUrl    String
+  specs       Json // JSON или markdown
+  categoryId  Int
+  category    Category     @relation(fields: [categoryId], references: [id])
+  components  ComponentOnProduct[]
+  drawingUrl  String?  // файл чертежа
+  createdAt   DateTime     @default(now())
+}
+
+model Category {
+  id       Int       @id @default(autoincrement())
+  name     String
+  slug     String    @unique
+  products Product[]
+}
+
+//Component — детали (подвес, секция, соединитель и т.д.)
+model Component {
+  id          Int                 @id @default(autoincrement())
+  name        String
+  slug        String              @unique
+  imageUrl    String?
+  specs       Json
+  price       Float
+  createdAt   DateTime            @default(now())
+  products    ComponentOnProduct[]
+}
+
+model ComponentOnProduct {
+  id          Int       @id @default(autoincrement())
+  productId   Int
+  componentId Int
+  quantity    Int       @default(1)
+  product     Product   @relation(fields: [productId], references: [id])
+  component   Component @relation(fields: [componentId], references: [id])
+}
+
+model Inquiry {
+  id        Int      @id @default(autoincrement())
+  name      String
+  email     String
+  phone     String
+  message   String
+  productId Int?
+  createdAt DateTime @default(now())
+}
