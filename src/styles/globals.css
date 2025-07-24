@@ -2,11 +2,134 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+/* === Цветовая система и переменные === */
 :root {
-    --background: #ffffff;
-    --foreground: #171717;
+    /* Основные цвета */
+    --color-primary: #2c3e50;
+    --color-primary-hover: #1d2b3a;
+    --color-accent: #5bd19c;
+    --color-accent-hover: #48b782;
+
+    /* Фоны и границы */
+    --color-bg: #ffffff;
+    --color-bg-soft: #f8fafc;
+    --color-surface: #f1f5f9;
+    --color-border: #e2e8f0;
+
+    /* Текст */
+    --color-text: #1e293b;
+    --color-text-muted: #64748b;
+
+    /* Шрифты */
+    --font-sans: 'Manrope', sans-serif;
 }
 
+.dark {
+    --color-bg: #0f172a;
+    --color-bg-soft: #1e293b;
+    --color-surface: #1e293b;
+    --color-border: #334155;
+
+    --color-text: #f1f5f9;
+    --color-text-muted: #94a3b8;
+}
+
+/* === Базовые стили (resets и шрифты) === */
+@layer base {
+    html {
+        scroll-behavior: smooth;
+        font-family: var(--font-sans);
+        background-color: var(--color-bg);
+        color: var(--color-text);
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: var(--color-text);
+        font-weight: 700;
+    }
+
+    a {
+        color: var(--color-primary);
+        text-decoration: none;
+    }
+
+    body {
+        @apply antialiased;
+    }
+}
+
+/* === Компоненты (по необходимости) === */
+@layer components {
+    .btn {
+        @apply inline-flex items-center justify-center px-5 py-2.5 rounded-full text-white font-semibold transition;
+        background-color: var(--color-primary);
+    }
+
+    .btn:hover {
+        background-color: var(--color-primary-hover);
+    }
+
+    .btn-accent {
+        background-color: var(--color-accent);
+    }
+
+    .btn-accent:hover {
+        background-color: var(--color-accent-hover);
+    }
+
+    .input {
+        @apply p-3 rounded-lg w-full border;
+        background-color: white;
+        color: var(--color-text);
+        border-color: var(--color-border);
+    }
+
+    .card {
+        @apply p-6 rounded-xl shadow-soft bg-[var(--color-surface)];
+    }
+}
+
+/* === Утилиты === */
+@layer utilities {
+    .bg-primary {
+        background-color: var(--color-primary);
+    }
+
+    .text-primary {
+        color: var(--color-primary);
+    }
+
+    .bg-accent {
+        background-color: var(--color-accent);
+    }
+
+    .text-muted {
+        color: var(--color-text-muted);
+    }
+
+    .shadow-soft {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    .rounded-xl {
+        border-radius: 1.5rem;
+    }
+
+    .transition-base {
+        @apply transition duration-200 ease-in-out;
+    }
+
+    .container-padding {
+        padding-left: max(1rem, 5vw);
+        padding-right: max(1rem, 5vw);
+    }
+}
+/* 
 @theme inline {
     --color-background: var(--background);
     --color-foreground: var(--foreground);
@@ -22,5 +145,4 @@
 body {
     background: var(--background);
     color: var(--foreground);
-    /* font-family: var(--font-roboto); */
-}
+} */
