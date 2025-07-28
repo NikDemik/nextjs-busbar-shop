@@ -1,26 +1,20 @@
 @import 'tailwindcss';
 
-@custom-variant dark (&:where(.dark, .dark *));
-
-/* === Цветовая система и переменные === */
+/* === Цветовая палитра по макету === */
 :root {
-    /* Основные цвета */
-    --color-primary: #2c3e50;
-    --color-primary-hover: #1d2b3a;
-    --color-accent: #5bd19c;
-    --color-accent-hover: #48b782;
+    --color-primary: #1e3a3a; /* тёмно-зелёный фон хедера */
+    --color-primary-gradient: linear-gradient(90deg, #1e3a3a, #2c3e50);
+    --color-accent: #5bd19c; /* зелёный акцент (Submit/Call) */
+    --color-accent-hover: #45b884;
 
-    /* Фоны и границы */
     --color-bg: #ffffff;
-    --color-bg-soft: #f8fafc;
-    --color-surface: #f1f5f9;
-    --color-border: #e2e8f0;
+    --color-bg-soft: #f1f5f9;
+    --color-surface: #e9f1ed;
+    --color-border: #d1d5db;
 
-    /* Текст */
     --color-text: #1e293b;
     --color-text-muted: #64748b;
 
-    /* Шрифты */
     --font-sans: 'Manrope', sans-serif;
 }
 
@@ -34,78 +28,67 @@
     --color-text-muted: #94a3b8;
 }
 
-/* === Базовые стили (resets и шрифты) === */
+/* === BASE === */
 @layer base {
     html {
-        scroll-behavior: smooth;
         font-family: var(--font-sans);
         background-color: var(--color-bg);
         color: var(--color-text);
     }
 
+    body {
+        @apply antialiased;
+    }
+
     h1,
     h2,
     h3,
-    h4,
-    h5,
-    h6 {
-        color: var(--color-text);
+    h4 {
         font-weight: 700;
     }
 
     a {
-        color: var(--color-primary);
         text-decoration: none;
-    }
-
-    body {
-        @apply antialiased;
+        color: inherit;
     }
 }
 
-/* === Компоненты (по необходимости) === */
+/* === COMPONENTS === */
 @layer components {
     .btn {
-        @apply inline-flex items-center justify-center px-5 py-2.5 rounded-full text-white font-semibold transition;
-        background-color: var(--color-primary);
-    }
-
-    .btn:hover {
-        background-color: var(--color-primary-hover);
-    }
-
-    .btn-accent {
+        @apply inline-flex items-center justify-center px-5 py-2 rounded-full text-white font-semibold transition;
         background-color: var(--color-accent);
     }
 
-    .btn-accent:hover {
+    .btn:hover {
         background-color: var(--color-accent-hover);
     }
 
-    .input {
-        @apply p-3 rounded-lg w-full border;
-        background-color: white;
-        color: var(--color-text);
-        border-color: var(--color-border);
+    .header {
+        background: var(--color-primary-gradient);
+        @apply text-white;
     }
 
     .card {
-        @apply p-6 rounded-xl shadow-soft bg-[var(--color-surface)];
+        @apply p-6 rounded-xl shadow-md bg-white;
+    }
+
+    .input {
+        @apply w-full p-3 rounded-md border text-sm;
+        background-color: white;
+        border-color: var(--color-border);
+        color: var(--color-text);
     }
 }
 
-/* === Утилиты === */
+/* === UTILITIES === */
 @layer utilities {
     .bg-primary {
         background-color: var(--color-primary);
     }
 
-    .text-primary {
-        color: var(--color-primary);
-    }
-
-    .bg-accent {
-        background-color: var(--color-accent);
+    .bg-gradient {
+        background-color: var(--color-primary-gradient);
     }
 
     .text-muted {
@@ -117,11 +100,7 @@
     }
 
     .rounded-xl {
-        border-radius: 1.5rem;
-    }
-
-    .transition-base {
-        @apply transition duration-200 ease-in-out;
+        border-radius: 1.25rem;
     }
 
     .container-padding {
@@ -129,20 +108,3 @@
         padding-right: max(1rem, 5vw);
     }
 }
-/* 
-@theme inline {
-    --color-background: var(--background);
-    --color-foreground: var(--foreground);
-}
-
-@media (prefers-color-scheme: dark) {
-    :root {
-        --background: #0a0a0a;
-        --foreground: #ededed;
-    }
-}
-
-body {
-    background: var(--background);
-    color: var(--foreground);
-} */

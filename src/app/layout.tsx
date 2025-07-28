@@ -1,8 +1,8 @@
 import '../styles/globals.css';
 import { ReactNode } from 'react';
 import { Roboto, Inter, Manrope } from 'next/font/google';
-import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import Header from '@/components/Header';
 
 const inter = Inter({
     subsets: ['cyrillic', 'latin'],
