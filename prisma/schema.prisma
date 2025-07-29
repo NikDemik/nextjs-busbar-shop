@@ -41,6 +41,7 @@ model Component {
   id          Int                 @id @default(autoincrement())
   name        String
   slug        String              @unique
+  description String              @default("")
   imageUrl    String?
   specs       Json
   price       Float

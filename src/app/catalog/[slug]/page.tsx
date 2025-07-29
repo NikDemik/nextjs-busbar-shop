@@ -5,9 +5,13 @@ import Link from 'next/link';
 
 const prisma = new PrismaClient();
 
-export default async function CategoryPage({ params }: { params: { slug: string } }) {
+export const dynamic = 'force-dynamic';
+
+export default async function CategoryPage(props: { params: { slug: string } }) {
+    const { slug } = props.params;
+
     const category = await prisma.category.findUnique({
-        where: { slug: params.slug },
+        where: { slug },
         include: {
             products: {
                 include: {
