@@ -8,35 +8,51 @@ async function main() {
     const filePath = path.join(__dirname, 'seed-data.json');
     const data = JSON.parse(await fs.readFile(filePath, 'utf-8'));
 
-    // Создаем компоненты
-    const componentMap = new Map<string, number>();
-    for (const component of data.components) {
-        const created = await prisma.component.create({ data: component });
-        componentMap.set(component.slug, created.id);
-    }
+    // Очистка (только для разработки)
+    await prisma.componentOnProduct.deleteMany();
+    await prisma.product.deleteMany();
+    await prisma.component.deleteMany();
+    await prisma.series.deleteMany();
+    await prisma.category.deleteMany();
 
-    // Создаем категории
+    // === 1. Категории ===
     const categoryMap = new Map<string, number>();
-    for (const category of data.categories) {
-        const created = await prisma.category.create({ data: category });
-        categoryMap.set(category.slug, created.id);
+    for (const c of data.categories) {
+        const created = await prisma.category.create({ data: c });
+        categoryMap.set(c.slug, created.id);
     }
 
-    // Создаем продукты и связи с компонентами
-    for (const product of data.products) {
+    // === 2. Серии ===
+    const seriesMap = new Map<string, number>();
+    for (const s of data.series) {
+        const created = await prisma.series.create({ data: s });
+        seriesMap.set(s.slug, created.id);
+    }
+
+    // === 3. Компоненты ===
+    const componentMap = new Map<string, number>();
+    for (const comp of data.components) {
+        const created = await prisma.component.create({ data: comp });
+        componentMap.set(comp.slug, created.id);
+    }
+
+    // === 4. Продукты ===
+    for (const p of data.products) {
         const createdProduct = await prisma.product.create({
             data: {
-                name: product.name,
-                slug: product.slug,
-                description: product.description,
-                imageUrl: product.imageUrl,
-                drawingUrl: product.drawingUrl,
-                specs: product.specs,
-                categoryId: categoryMap.get(product.categorySlug)!,
+                name: p.name,
+                slug: p.slug,
+                description: p.description,
+                imageUrl: p.imageUrl,
+                drawingUrl: p.drawingUrl ?? null,
+                specs: p.specs,
+                categoryId: categoryMap.get(p.categorySlug)!,
+                seriesId: p.seriesSlug ? seriesMap.get(p.seriesSlug) : undefined,
             },
         });
 
-        for (const comp of product.components) {
+        // Привязка компонентов
+        for (const comp of p.components) {
             await prisma.componentOnProduct.create({
                 data: {
                     productId: createdProduct.id,
@@ -47,11 +63,11 @@ async function main() {
         }
     }
 
-    console.log('✅ Сидинг завершён.');
+    console.log('✅ Seed завершён успешно.');
 }
 
 main()
     .catch((e) => {
-        console.error('❌ Ошибка при сидинге:', e);
+        console.error('❌ Ошибка при сидировании:', e);
     })
     .finally(() => prisma.$disconnect());

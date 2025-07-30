@@ -1,20 +1,18 @@
 import { notFound } from 'next/navigation';
 import { prisma } from '@/lib/prisma';
 import Link from 'next/link';
+import { type PropsWithChildren } from 'react';
 
-export const dynamic = 'force-dynamic';
+// export const dynamic = 'force-dynamic';
+
+// interface PageProps {
+//     params: { slug: string };
+// }
 
 export default async function ProductPage({ params }: { params: { slug: string } }) {
     const product = await prisma.product.findUnique({
         where: { slug: params.slug },
-        include: {
-            category: true,
-            components: {
-                include: {
-                    component: true,
-                },
-            },
-        },
+        include: { series: true, components: { include: { component: true } } },
     });
 
     if (!product) return notFound();
@@ -32,6 +30,9 @@ export default async function ProductPage({ params }: { params: { slug: string }
 
                 <div>
                     <h1 className="text-3xl font-bold mb-4">{product.name}</h1>
+                    {product.series && (
+                        <p className="text-muted mb-4">Серия: {product.series.name}</p>
+                    )}
                     <p className="text-muted mb-6">{product.description}</p>
 
                     <div className="mb-4">

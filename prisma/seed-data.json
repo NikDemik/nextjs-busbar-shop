@@ -1,10 +1,47 @@
 {
+    "categories": [
+        {
+            "name": "Шинопроводы",
+            "slug": "busbars",
+            "description": "Троллейные шинопроводы для промышленных и крановых систем"
+        },
+        {
+            "name": "Комплектующие",
+            "slug": "components",
+            "description": "Контактные щетки, держатели, подвесы, кронштейны и другое"
+        },
+        {
+            "name": "Готовые комплекты",
+            "slug": "kits",
+            "description": "Готовые решения для типовых задач по электропитанию оборудования"
+        }
+    ],
+    "series": [
+        {
+            "name": "60A Economy",
+            "slug": "60a-economy",
+            "description": "Экономичная серия шинопроводов на 60 ампер"
+        },
+        {
+            "name": "MonoRail",
+            "slug": "monorail",
+            "description": "Монотроллейная серия для одного полюса"
+        }
+    ],
     "components": [
+        {
+            "name": "Корпус 4м",
+            "slug": "busbar-4m",
+            "description": "Корпус шинопровода",
+            "imageUrl": "/image/busbar-4m.jpg",
+            "specs": { "type": "универсальный", "material": "пластик" },
+            "price": 300
+        },
         {
             "name": "Подвес",
             "slug": "hanger",
             "description": "Стальной подвес для шинопровода",
-            "imageUrl": "/images/hanger.jpg",
+            "imageUrl": "/image/hanger.jpg",
             "specs": { "type": "универсальный", "material": "сталь" },
             "price": 120
         },
@@ -12,38 +49,38 @@
             "name": "Медная жила 60А",
             "slug": "copper-60a",
             "description": "Медный токопровод на 60А",
-            "imageUrl": "/images/copper-60a.jpg",
+            "imageUrl": "/image/copper-60a.jpg",
             "specs": { "amperage": 60, "material": "Cu" },
             "price": 250
         }
     ],
-    "categories": [
-        { "name": "Шинопроводы", "slug": "busbars" },
-        { "name": "Комплектующие", "slug": "components" },
-        { "name": "Готовые комплекты", "slug": "kits" }
-    ],
+
     "products": [
         {
             "name": "Шинопровод 60А, 4P",
             "slug": "busbar-60a-4p",
             "description": "Шинопровод для токоподвода, 60А, 4 полюса",
-            "imageUrl": "/images/busbar-60a.jpg",
+            "imageUrl": "/image/products/busbar.jpg",
             "drawingUrl": "/drawings/busbar-60a.dxf",
             "specs": { "amperage": 60, "poles": 4 },
             "categorySlug": "busbars",
+            "seriesSlug": "60a-economy",
             "components": [
+                { "slug": "busbar-4m", "quantity": 1 },
                 { "slug": "copper-60a", "quantity": 4 },
                 { "slug": "hanger", "quantity": 2 }
             ]
         },
         {
-            "name": "Готовый комплект 60А, 12м",
+            "name": "Готовый комплект шинопровод 60А, 12м",
             "slug": "kit-60a-12m",
             "description": "Готовый комплект из шинопровода и комплектующих",
-            "imageUrl": "/images/kit-60a.jpg",
+            "imageUrl": "/image/products/busbar.jpg",
             "specs": { "amperage": 60, "length": "12м" },
             "categorySlug": "kits",
+            "seriesSlug": "60a-economy",
             "components": [
+                { "slug": "busbar-4m", "quantity": 3 },
                 { "slug": "copper-60a", "quantity": 4 },
                 { "slug": "hanger", "quantity": 3 }
             ]

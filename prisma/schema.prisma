@@ -14,6 +14,14 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model Series {
+  id          Int       @id @default(autoincrement())
+  name        String
+  slug        String    @unique
+  description String?
+  products    Product[]
+}
+
 // основной комплект (например, шинопровод 60А)
 model Product {
   id          Int          @id @default(autoincrement())
@@ -23,25 +31,29 @@ model Product {
   imageUrl    String
   specs       Json // JSON или markdown
   categoryId  Int
+  seriesId    Int?
   category    Category     @relation(fields: [categoryId], references: [id])
+  series      Series?   @relation(fields: [seriesId], references: [id])
   components  ComponentOnProduct[]
   drawingUrl  String?  // файл чертежа
   createdAt   DateTime     @default(now())
 }
 
 model Category {
-  id       Int       @id @default(autoincrement())
-  name     String
-  slug     String    @unique
-  products Product[]
+  id          Int       @id @default(autoincrement())
+  name        String
+  slug        String    @unique
+  description String    // ← добавляем описание
+  products    Product[]
 }
+
 
 //Component — детали (подвес, секция, соединитель и т.д.)
 model Component {
   id          Int                 @id @default(autoincrement())
   name        String
   slug        String              @unique
-  description String              @default("")
+  description String
   imageUrl    String?
   specs       Json
   price       Float

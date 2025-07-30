@@ -78,6 +78,12 @@ export default function Header() {
                                         >
                                             Комплектующие
                                         </Link>
+                                        <Link
+                                            href="/catalog/kits"
+                                            className="block px-4 py-2 hover:bg-[var(--color-bg-soft)]"
+                                        >
+                                            Готовые комплекты
+                                        </Link>
                                     </motion.div>
                                 )}
                             </AnimatePresence>
@@ -150,6 +156,12 @@ export default function Header() {
                                         className="block hover:underline"
                                     >
                                         Комплектующие
+                                    </Link>
+                                    <Link
+                                        href="/catalog/kits"
+                                        className="block px-4 py-2 hover:bg-[var(--color-bg-soft)]"
+                                    >
+                                        Готовые комплекты
                                     </Link>
                                 </div>
                             </details>

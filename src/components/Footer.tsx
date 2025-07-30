@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Phone, Mail, Facebook, Twitter, Youtube, Linkedin } from 'lucide-react';
+import { Phone, Mail, MessageCircle, Facebook, Twitter, Youtube, Linkedin } from 'lucide-react';
 import contactData from '@/lib/contactData';
 
 export default function Footer() {
@@ -8,7 +8,7 @@ export default function Footer() {
             <div className="container-padding py-12 grid grid-cols-1 md:grid-cols-4 gap-8">
                 {/* Лого и текст */}
                 <div>
-                    <h2 className="text-xl font-bold mb-2">Троллейный.рф</h2>
+                    <h2 className="text-xl font-bold mb-2">Троллейный шинопровод</h2>
                     <p className="text-muted">
                         Надежные решения для троллейных шинопроводов. Работаем с B2B-сегментом по
                         всей России.
@@ -18,13 +18,10 @@ export default function Footer() {
                             <Facebook size={18} />
                         </a>
                         <a href="#">
-                            <Twitter size={18} />
-                        </a>
-                        <a href="#">
                             <Youtube size={18} />
                         </a>
                         <a href="#">
-                            <Linkedin size={18} />
+                            <MessageCircle size={18} />
                         </a>
                     </div>
                 </div>
@@ -82,7 +79,7 @@ export default function Footer() {
                 </div>
             </div>
             <div className="text-center py-4 border-t border-white/10 text-xs opacity-80">
-                © 2025 Троллейный.рф — Все права защищены.
+                © 2025 Троллейный шинопровод — Все права защищены.
             </div>
         </footer>
     );

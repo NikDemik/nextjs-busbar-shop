@@ -107,4 +107,11 @@
         padding-left: max(1rem, 5vw);
         padding-right: max(1rem, 5vw);
     }
+
+    .filter-pill {
+        @apply px-4 py-1 border rounded-full text-sm hover:bg-gray-100;
+    }
+    .filter-pill.active {
+        @apply bg-[var(--color-accent)] text-white border-[var(--color-accent)];
+    }
 }
