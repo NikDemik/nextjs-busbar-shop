@@ -25,7 +25,7 @@ export function ProductCard({ name, description, slug, imageUrl, seriesName }: P
                 href={`/product/${slug}`}
                 className="inline-block text-[var(--color-accent)] hover:underline"
             >
-                Подробнее →
+                Подробнее →123
             </Link>
         </div>
     );

@@ -5,9 +5,9 @@ import { type PropsWithChildren } from 'react';
 
 // export const dynamic = 'force-dynamic';
 
-// interface PageProps {
-//     params: { slug: string };
-// }
+interface PageProps {
+    params: { slug: string };
+}
 
 export default async function ProductPage({ params }: { params: { slug: string } }) {
     const product = await prisma.product.findUnique({

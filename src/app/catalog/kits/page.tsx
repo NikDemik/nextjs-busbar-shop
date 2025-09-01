@@ -4,14 +4,18 @@ import { ProductCard } from '@/components/ProductCard';
 export const dynamic = 'force-dynamic';
 
 export default async function Page() {
+    // Обращаемся к таблице/модели product
     const products = await prisma.product.findMany({
+        // Указываем фильтрацию данных
         where: {
             OR: [
+                // Первый вариант: продукт принадлежит категории, у которой slug начинается на "kit"
                 { category: { slug: { startsWith: 'kit' } } },
-                { category: { slug: 'mono-busbar' } },
+                { category: { slug: 'kits' } },
             ],
         },
-        include: { category: true },
+        // кроме данных о продукте, подтянуть и связанную категорию и серию
+        include: { category: true, series: true },
     });
 
     return (

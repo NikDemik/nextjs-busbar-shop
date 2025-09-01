@@ -72,6 +72,21 @@
             ]
         },
         {
+            "name": "Шинопровод 1000А",
+            "slug": "busbar-1000a",
+            "description": "Монотроллейная серия для одного полюса 1000А",
+            "imageUrl": "/image/products/busbar.jpg",
+            "drawingUrl": "/drawings/busbar-60a.dxf",
+            "specs": { "amperage": 1000, "poles": 1 },
+            "categorySlug": "busbars",
+            "seriesSlug": "monorail",
+            "components": [
+                { "slug": "busbar-4m", "quantity": 1 },
+                { "slug": "copper-60a", "quantity": 3 },
+                { "slug": "hanger", "quantity": 4 }
+            ]
+        },
+        {
             "name": "Готовый комплект шинопровод 60А, 12м",
             "slug": "kit-60a-12m",
             "description": "Готовый комплект из шинопровода и комплектующих",
