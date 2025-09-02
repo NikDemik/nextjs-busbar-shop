@@ -57,7 +57,7 @@ export default async function CategoryPage(props: { params: { slug: string } }) 
                                 {product.components.map((c) => c.component.name).join(', ') || '—'}
                             </div>
                             <Link href={`/product/${product.slug}`} className="btn w-full text-sm">
-                                Подробнее
+                                Подробнее123
                             </Link>
                         </div>
                     ))}

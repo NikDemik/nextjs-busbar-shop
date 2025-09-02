@@ -16,89 +16,217 @@
             "description": "Готовые решения для типовых задач по электропитанию оборудования"
         }
     ],
-    "series": [
+    "brands": [
         {
-            "name": "60A Economy",
-            "slug": "60a-economy",
-            "description": "Экономичная серия шинопроводов на 60 ампер"
+            "name": "Giovenzana",
+            "slug": "giovenzana"
         },
         {
-            "name": "MonoRail",
-            "slug": "monorail",
-            "description": "Монотроллейная серия для одного полюса"
+            "name": "Vahle",
+            "slug": "vahle"
+        }
+    ],
+    "busbarTypes": [
+        {
+            "name": "Троллейный",
+            "slug": "trolley"
+        },
+        {
+            "name": "Монотроллейный",
+            "slug": "mono-trolley"
+        }
+    ],
+    "series": [
+        {
+            "name": "1 шина",
+            "slug": "1-poles-vahle",
+            "brandSlug": "vahle"
+        },
+        {
+            "name": "4 шины",
+            "slug": "4-poles",
+            "brandSlug": "giovenzana"
+        },
+        {
+            "name": "5 шин",
+            "slug": "5-poles",
+            "brandSlug": "giovenzana"
+        },
+        {
+            "name": "4 шины",
+            "slug": "4-poles-vahle",
+            "brandSlug": "vahle"
+        },
+        {
+            "name": "5 шин",
+            "slug": "5-poles-vahle",
+            "brandSlug": "vahle"
+        }
+    ],
+    "busbars": [
+        {
+            "name": "Шинопровод 60А (4 шины)",
+            "slug": "giovenzana-4p-60a",
+            "description": "Шинопровод для токоподвода, 60А, 4 полюса",
+            "amperage": 60,
+            "imageUrl": "/image/products/busbar.jpg",
+            "specs": { "amperage": 60, "poles": 4 },
+            "categorySlug": "busbars",
+            "brandSlug": "giovenzana",
+            "typeSlug": "trolley",
+            "seriesSlug": "4-poles"
+        },
+        {
+            "name": "Шинопровод 100А (5 шин)",
+            "slug": "giovenzana-5p-100a",
+            "description": "Шинопровод для токоподвода, 100А, 5 полюсов",
+            "amperage": 100,
+            "imageUrl": "/image/products/busbar.jpg",
+            "specs": { "amperage": 100, "poles": 5 },
+            "categorySlug": "busbars",
+            "brandSlug": "giovenzana",
+            "typeSlug": "trolley",
+            "seriesSlug": "5-poles"
+        },
+        {
+            "name": "Шинопровод 1000А (5 шин)",
+            "slug": "vahle-5p-1000a",
+            "description": "Монотроллейный шинопровод для токоподвода, 1000А, 1 полюс",
+            "amperage": 1000,
+            "imageUrl": "/image/products/busbar.jpg",
+            "specs": { "amperage": 1000, "poles": 1 },
+            "categorySlug": "busbars",
+            "brandSlug": "vahle",
+            "typeSlug": "mono-trolley",
+            "seriesSlug": "1-poles-vahle"
         }
     ],
     "components": [
         {
-            "name": "Корпус 4м",
-            "slug": "busbar-4m",
+            "name": "Корпус шинопровода",
+            "slug": "housing-giovenzana-4p",
+            "type": "MAIN",
             "description": "Корпус шинопровода",
             "imageUrl": "/image/busbar-4m.jpg",
             "specs": { "type": "универсальный", "material": "пластик" },
-            "price": 300
+            "price": 300,
+            "isOptional": false,
+            "categorySlug": "components",
+            "brandSlug": "giovenzana",
+            "typeSlug": "trolley",
+            "seriesSlug": "4-poles"
         },
         {
             "name": "Подвес",
-            "slug": "hanger",
-            "description": "Стальной подвес для шинопровода",
-            "imageUrl": "/image/hanger.jpg",
-            "specs": { "type": "универсальный", "material": "сталь" },
-            "price": 120
+            "slug": "hanger-giovenzana-4p",
+            "type": "MAIN",
+            "description": "Подвес",
+            "imageUrl": "/image/busbar-4m.jpg",
+            "specs": { "type": "универсальный", "material": "металл" },
+            "price": 300,
+            "isOptional": false,
+            "categorySlug": "components",
+            "brandSlug": "giovenzana",
+            "typeSlug": "trolley",
+            "seriesSlug": "4-poles"
         },
         {
-            "name": "Медная жила 60А",
-            "slug": "copper-60a",
-            "description": "Медный токопровод на 60А",
-            "imageUrl": "/image/copper-60a.jpg",
-            "specs": { "amperage": 60, "material": "Cu" },
-            "price": 250
-        }
-    ],
-
-    "products": [
-        {
-            "name": "Шинопровод 60А, 4P",
-            "slug": "busbar-60a-4p",
-            "description": "Шинопровод для токоподвода, 60А, 4 полюса",
-            "imageUrl": "/image/products/busbar.jpg",
-            "drawingUrl": "/drawings/busbar-60a.dxf",
-            "specs": { "amperage": 60, "poles": 4 },
-            "categorySlug": "busbars",
-            "seriesSlug": "60a-economy",
-            "components": [
-                { "slug": "busbar-4m", "quantity": 1 },
-                { "slug": "copper-60a", "quantity": 4 },
-                { "slug": "hanger", "quantity": 2 }
-            ]
+            "name": "Соединение",
+            "slug": "connector-giovenzana-4p",
+            "type": "MAIN",
+            "description": "Соединение",
+            "imageUrl": "/image/busbar-4m.jpg",
+            "specs": { "type": "универсальный", "material": "пластик" },
+            "price": 300,
+            "isOptional": false,
+            "categorySlug": "components",
+            "brandSlug": "giovenzana",
+            "typeSlug": "trolley",
+            "seriesSlug": "4-poles"
         },
         {
-            "name": "Шинопровод 1000А",
-            "slug": "busbar-1000a",
-            "description": "Монотроллейная серия для одного полюса 1000А",
-            "imageUrl": "/image/products/busbar.jpg",
-            "drawingUrl": "/drawings/busbar-60a.dxf",
-            "specs": { "amperage": 1000, "poles": 1 },
-            "categorySlug": "busbars",
-            "seriesSlug": "monorail",
-            "components": [
-                { "slug": "busbar-4m", "quantity": 1 },
-                { "slug": "copper-60a", "quantity": 3 },
-                { "slug": "hanger", "quantity": 4 }
-            ]
+            "name": "Заглушка",
+            "slug": "end-cap-giovenzana-4p",
+            "type": "MAIN",
+            "description": "Заглушка",
+            "imageUrl": "/image/busbar-4m.jpg",
+            "specs": { "type": "универсальный", "material": "пластик" },
+            "price": 300,
+            "isOptional": false,
+            "categorySlug": "components",
+            "brandSlug": "giovenzana",
+            "typeSlug": "trolley",
+            "seriesSlug": "4-poles"
         },
         {
-            "name": "Готовый комплект шинопровод 60А, 12м",
-            "slug": "kit-60a-12m",
-            "description": "Готовый комплект из шинопровода и комплектующих",
-            "imageUrl": "/image/products/busbar.jpg",
-            "specs": { "amperage": 60, "length": "12м" },
-            "categorySlug": "kits",
-            "seriesSlug": "60a-economy",
-            "components": [
-                { "slug": "busbar-4m", "quantity": 3 },
-                { "slug": "copper-60a", "quantity": 4 },
-                { "slug": "hanger", "quantity": 3 }
-            ]
+            "name": "Подвод питания",
+            "slug": "power-supply-giovenzana-4p",
+            "type": "ADDITIONAL",
+            "description": "Подвод питания",
+            "imageUrl": "/image/busbar-4m.jpg",
+            "specs": { "type": "универсальный", "material": "пластик" },
+            "price": 300,
+            "isOptional": true,
+            "categorySlug": "components",
+            "brandSlug": "giovenzana",
+            "typeSlug": "trolley",
+            "seriesSlug": "4-poles"
+        },
+        {
+            "name": "Указатель",
+            "slug": "indicator-giovenzana-4p",
+            "type": "ADDITIONAL",
+            "description": "Указатель",
+            "imageUrl": "/image/busbar-4m.jpg",
+            "specs": { "type": "универсальный", "material": "пластик" },
+            "price": 300,
+            "isOptional": true,
+            "categorySlug": "components",
+            "brandSlug": "giovenzana",
+            "typeSlug": "trolley",
+            "seriesSlug": "4-poles"
+        },
+        {
+            "name": "Корпус шинопровода",
+            "slug": "housing-vahle-5p",
+            "type": "MAIN",
+            "description": "Корпус шинопровода",
+            "imageUrl": "/image/busbar-4m.jpg",
+            "specs": { "type": "универсальный", "material": "пластик" },
+            "price": 300,
+            "isOptional": false,
+            "categorySlug": "components",
+            "brandSlug": "vahle",
+            "typeSlug": "trolley",
+            "seriesSlug": "5-poles-vahle"
+        },
+        {
+            "name": "Подвес",
+            "slug": "hanger-vahle-5p",
+            "type": "MAIN",
+            "description": "Подвес",
+            "imageUrl": "/image/busbar-4m.jpg",
+            "specs": { "type": "универсальный", "material": "пластик" },
+            "price": 300,
+            "isOptional": false,
+            "categorySlug": "components",
+            "brandSlug": "vahle",
+            "typeSlug": "trolley",
+            "seriesSlug": "5-poles-vahle"
+        },
+        {
+            "name": "Подвод питания",
+            "slug": "power-supply-vahle-5p",
+            "type": "ADDITIONAL",
+            "description": "Подвод питания",
+            "imageUrl": "/image/busbar-4m.jpg",
+            "specs": { "type": "универсальный", "material": "пластик" },
+            "price": 300,
+            "isOptional": true,
+            "categorySlug": "components",
+            "brandSlug": "vahle",
+            "typeSlug": "trolley",
+            "seriesSlug": "5-poles-vahle"
         }
     ]
 }

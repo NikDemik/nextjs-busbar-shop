@@ -70,7 +70,7 @@
     }
 
     .card {
-        @apply p-6 rounded-xl shadow-md bg-white;
+        @apply p-6 rounded-xl shadow-sm bg-white border border-gray-200 hover:shadow-lg transition;
     }
 
     .input {

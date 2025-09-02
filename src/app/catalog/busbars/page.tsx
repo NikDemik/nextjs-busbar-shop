@@ -1,28 +1,28 @@
-// /app/catalog/busbars/page.tsx
 import { prisma } from '@/lib/prisma';
 import Link from 'next/link';
+import { ProductCard } from '@/components/ProductCard';
 
 export default async function BusbarCatalogPage({
     searchParams,
 }: {
     searchParams: { series?: string };
 }) {
-    const seriesList = await prisma.series.findMany();
+    const seriesSlug = Array.isArray(searchParams.series)
+        ? searchParams.series[0]
+        : searchParams.series;
 
-    const where = {
-        category: { slug: 'busbars' },
-        ...(searchParams.series
-            ? {
-                  series: {
-                      slug: searchParams.series,
-                  },
-              }
-            : {}),
+    const seriesList = await prisma.series.findMany({
+        where: { busbars: { some: {} } },
+    });
+
+    const where: any = {
+        category: { is: { slug: 'busbars' } },
+        ...(seriesSlug ? { series: { is: { slug: seriesSlug } } } : {}),
     };
 
-    const products = await prisma.product.findMany({
+    const busbars = await prisma.busbar.findMany({
         where,
-        include: { series: true },
+        include: { series: true, brand: true, type: true },
         orderBy: { createdAt: 'desc' },
     });
 
@@ -34,7 +34,7 @@ export default async function BusbarCatalogPage({
             <div className="mb-6 flex flex-wrap gap-4">
                 <Link
                     href="/catalog/busbars"
-                    className={`filter-pill ${!searchParams.series ? 'active' : ''}`}
+                    className={`filter-pill ${!seriesSlug ? 'active' : ''}`}
                 >
                     Все серии
                 </Link>
@@ -42,38 +42,24 @@ export default async function BusbarCatalogPage({
                     <Link
                         key={s.slug}
                         href={`/catalog/busbars?series=${s.slug}`}
-                        className={`filter-pill ${searchParams.series === s.slug ? 'active' : ''}`}
+                        className={`filter-pill ${seriesSlug === s.slug ? 'active' : ''}`}
                     >
                         {s.name}
                     </Link>
                 ))}
             </div>
 
+            {/* Сетка товаров */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                {products.map((p) => (
-                    <div
-                        key={p.slug}
-                        className="card border border-gray-200 bg-white shadow-sm hover:shadow-lg transition"
-                    >
-                        <img
-                            src={p.imageUrl}
-                            alt={p.name}
-                            className="rounded-t w-full h-48 object-cover"
-                        />
-                        <div className="p-4">
-                            <h2 className="text-xl font-semibold">{p.name}</h2>
-                            {p.series?.name && (
-                                <p className="text-sm text-muted">Серия: {p.series.name}</p>
-                            )}
-                            <p className="text-sm text-muted mt-2">{p.description}</p>
-                            <Link
-                                href={`/product/${p.slug}`}
-                                className="mt-4 inline-block text-[var(--color-accent)] font-medium hover:underline"
-                            >
-                                Подробнее →
-                            </Link>
-                        </div>
-                    </div>
+                {busbars.map((p) => (
+                    <ProductCard
+                        key={p.id}
+                        name={p.name}
+                        description={p.description || ''}
+                        slug={p.slug}
+                        seriesName={p.series?.name || ''}
+                        imageUrl={p.imageUrl || ''}
+                    />
                 ))}
             </div>
         </main>
