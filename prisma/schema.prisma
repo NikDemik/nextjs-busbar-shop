@@ -73,7 +73,7 @@ model Busbar {
   type        BusbarType   @relation(fields: [typeId], references: [id])
   seriesId    Int
   series      Series       @relation(fields: [seriesId], references: [id])
-  components  Component[]  @relation("BusbarComponents")
+  components  BusbarComponent[] // 🔹 связь через join-модель
   createdAt   DateTime     @default(now())
   updatedAt   DateTime     @updatedAt
 }
@@ -98,9 +98,21 @@ model Component {
   seriesId    Int
   series      Series       @relation(fields: [seriesId], references: [id])
   
-  busbars     Busbar[]     @relation("BusbarComponents")
+  busbars     BusbarComponent[] // 🔹 связь через join-модель
   createdAt   DateTime     @default(now())
   updatedAt   DateTime     @updatedAt
+}
+
+/// Join-модель для Busbar ↔ Component
+model BusbarComponent {
+  id          Int       @id @default(autoincrement())
+  busbarId    Int
+  componentId Int
+  quantity    Int       @default(1)
+  isDefault   Boolean   @default(true)
+
+  busbar      Busbar    @relation(fields: [busbarId], references: [id])
+  component   Component @relation(fields: [componentId], references: [id])
 }
 
 enum ComponentType {

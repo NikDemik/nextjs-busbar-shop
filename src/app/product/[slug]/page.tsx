@@ -9,10 +9,10 @@ interface PageProps {
     params: { slug: string };
 }
 
-export default async function ProductPage({ params }: { params: { slug: string } }) {
-    const product = await prisma.product.findUnique({
+export default async function ProductPage({ params }: PageProps) {
+    const product = await prisma.busbar.findUnique({
         where: { slug: params.slug },
-        include: { series: true, components: { include: { component: true } } },
+        include: { series: true, components: true },
     });
 
     if (!product) return notFound();
@@ -30,10 +30,8 @@ export default async function ProductPage({ params }: { params: { slug: string }
 
                 <div>
                     <h1 className="text-3xl font-bold mb-4">{product.name}</h1>
-                    {product.series && (
-                        <p className="text-muted mb-4">Серия: {product.series.name}</p>
-                    )}
-                    <p className="text-muted mb-6">{product.description}</p>
+                    {product.series && <p className="mb-4">Серия: {product.series.name}</p>}
+                    <p className="mb-6">{product.description}</p>
 
                     <div className="mb-4">
                         <strong>Характеристики:</strong>
@@ -61,8 +59,8 @@ export default async function ProductPage({ params }: { params: { slug: string }
                 <ul className="grid grid-cols-2 md:grid-cols-3 gap-4">
                     {product.components.map((c) => (
                         <li key={c.id} className="p-4 border rounded shadow-sm">
-                            <div className="font-semibold">{c.component.name}</div>
-                            <div className="text-sm text-muted">x{c.quantity}</div>
+                            <div className="font-semibold">{c.name}</div>
+                            <div className="text-sm text-muted">x{c.description}</div>
                         </li>
                     ))}
                 </ul>
