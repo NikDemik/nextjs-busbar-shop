@@ -9,15 +9,15 @@ interface ProductCardProps {
 }
 
 export function ProductCard({ name, description, slug, imageUrl, seriesName }: ProductCardProps) {
+    const placeholder = '/images/placeholder.jpg'; // 👈 сделай любое дефолтное изображение
+
     return (
         <div key={slug} className="card ">
-            {imageUrl && (
-                <img
-                    src={imageUrl}
-                    alt={name}
-                    className="w-full h-48 object-cover rounded mb-4 bg-white rounded-t"
-                />
-            )}
+            <img
+                src={imageUrl ?? placeholder}
+                alt={name}
+                className="w-full h-48 object-cover mb-4 bg-white rounded-t"
+            />
             <div className="p-4">
                 <h2 className="text-xl font-semibold mb-2">{name}</h2>
                 {seriesName && <p className="text-sm text-muted mb-1">Серия: {seriesName}</p>}

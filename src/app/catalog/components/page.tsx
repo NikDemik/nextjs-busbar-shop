@@ -1,21 +1,34 @@
 import { prisma } from '@/lib/prisma';
+import { ProductCard } from '@/components/ProductCard';
 
 export const dynamic = 'force-dynamic';
 
 export default async function ComponentsPage() {
-    const components = await prisma.component.findMany();
+    const where: any = {
+        category: { slug: 'components' },
+    };
+
+    const components = await prisma.component.findMany({
+        where,
+        include: { category: true, series: true, brand: true, busbarType: true },
+        orderBy: { createdAt: 'desc' },
+    });
 
     return (
         <main className="py-12 container-padding mx-auto">
             <h1 className="text-3xl font-bold mb-6">Комплектующие</h1>
-            <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 {components.map((c) => (
-                    <li key={c.id} className="card p-4 rounded-xl shadow">
-                        <h2 className="font-semibold text-lg mb-2">{c.name}</h2>
-                        <p className="text-muted text-sm">{JSON.stringify(c.specs)}</p>
-                    </li>
+                    <ProductCard
+                        key={c.id}
+                        name={c.name}
+                        description={c.description || ''}
+                        slug={c.slug}
+                        seriesName={c.series?.name || ''}
+                        imageUrl={c.imageUrl || ''}
+                    />
                 ))}
-            </ul>
+            </div>
         </main>
     );
 }

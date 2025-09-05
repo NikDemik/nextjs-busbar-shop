@@ -63,8 +63,9 @@ model Busbar {
   slug        String       @unique
   amperage    Int          // 60, 100, 1000 и т.д.
   description String?
-  imageUrl    String
+  imageUrl    String?
   specs       Json // JSON или markdown
+  drawingUrl  String?  // ссылки на доки
   categoryId  Int
   category    Category     @relation(fields: [categoryId], references: [id])
   brandId     Int
@@ -87,6 +88,7 @@ model Component {
   description String?
   isOptional  Boolean      @default(false) // если true → дополнительный комплектующий
   imageUrl    String?
+  drawingUrl  String?  // ссылки на доки
   specs       Json
   price       Float
   categoryId  Int

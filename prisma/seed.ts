@@ -9,8 +9,9 @@ async function main() {
     const data = JSON.parse(await fs.readFile(filePath, 'utf-8'));
 
     // Очистка (только для разработки)
-    await prisma.busbar.deleteMany();
+    await prisma.busbarComponent.deleteMany();
     await prisma.component.deleteMany();
+    await prisma.busbar.deleteMany();
     await prisma.series.deleteMany();
     await prisma.busbarType.deleteMany();
     await prisma.brand.deleteMany();
@@ -75,30 +76,10 @@ async function main() {
     }
     console.log('✅ Series done');
 
-    // === 5. Busbars ===
-    const busbarsMap = new Map<string, number>();
-    for (const b of data.busbars) {
-        const created = await prisma.busbar.create({
-            data: {
-                name: b.name,
-                slug: b.slug,
-                amperage: b.amperage,
-                description: b.description,
-                imageUrl: b.imageUrl,
-                specs: b.specs,
-                category: { connect: { slug: b.categorySlug } },
-                brand: { connect: { slug: b.brandSlug } },
-                type: { connect: { slug: b.typeSlug } },
-                series: { connect: { slug: b.seriesSlug } },
-            },
-        });
-        busbarsMap.set(b.slug, created.id);
-    }
-    console.log('✅ Busbars done');
-
-    // === 6. Components ===
+    // === 5. Components ===
+    const componentMap = new Map<string, number>();
     for (const c of data.components) {
-        await prisma.component.create({
+        const created = await prisma.component.create({
             data: {
                 name: c.name,
                 slug: c.slug,
@@ -106,21 +87,49 @@ async function main() {
                 description: c.description,
                 isOptional: c.isOptional ?? false,
                 imageUrl: c.imageUrl,
+                drawingUrl: c.drawingUrl,
                 specs: c.specs,
                 price: c.price,
                 category: { connect: { slug: c.categorySlug } },
                 brand: { connect: { slug: c.brandSlug } },
                 busbarType: { connect: { slug: c.typeSlug } },
                 series: { connect: { slug: c.seriesSlug } },
-
-                // связь с шинопроводами (BusbarComponents)
-                busbars: {
-                    connect: c.busbarSlugs?.map((slug: string) => ({ slug })) || [],
-                },
             },
         });
+        componentMap.set(c.slug, created.id);
     }
     console.log('✅ Components done');
+
+    // === 6. Busbars ===
+    for (const b of data.busbars) {
+        const createdBusbar = await prisma.busbar.create({
+            data: {
+                name: b.name,
+                slug: b.slug,
+                amperage: b.amperage,
+                description: b.description,
+                imageUrl: b.imageUrl,
+                drawingUrl: b.drawingUrl,
+                specs: b.specs,
+                category: { connect: { slug: b.categorySlug } },
+                brand: { connect: { slug: b.brandSlug } },
+                type: { connect: { slug: b.typeSlug } },
+                series: { connect: { slug: b.seriesSlug } },
+            },
+        });
+
+        // Привязка компонентов
+        for (const comp of b.components) {
+            await prisma.busbarComponent.create({
+                data: {
+                    busbarId: createdBusbar.id,
+                    componentId: componentMap.get(comp.slug)!,
+                    quantity: comp.quantity,
+                },
+            });
+        }
+    }
+    console.log('✅ Busbars done');
 
     console.log('🌱 Seeding finished!');
 }
