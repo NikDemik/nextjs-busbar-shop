@@ -83,13 +83,12 @@ async function main() {
             data: {
                 name: c.name,
                 slug: c.slug,
-                type: c.type,
                 description: c.description,
                 isOptional: c.isOptional ?? false,
                 imageUrl: c.imageUrl,
                 drawingUrl: c.drawingUrl,
-                specs: c.specs,
-                price: c.price,
+                specs: c.specs ?? {},
+                price: c.price ?? 0,
                 category: { connect: { slug: c.categorySlug } },
                 brand: { connect: { slug: c.brandSlug } },
                 busbarType: { connect: { slug: c.typeSlug } },
@@ -119,14 +118,20 @@ async function main() {
         });
 
         // Привязка компонентов
-        for (const comp of b.components) {
-            await prisma.busbarComponent.create({
-                data: {
-                    busbarId: createdBusbar.id,
-                    componentId: componentMap.get(comp.slug)!,
-                    quantity: comp.quantity,
-                },
-            });
+        if (b.components && b.components.length > 0) {
+            for (const comp of b.components) {
+                const compId = componentMap.get(comp.slug);
+                if (!compId) continue;
+
+                await prisma.busbarComponent.create({
+                    data: {
+                        busbarId: createdBusbar.id,
+                        componentId: compId,
+                        quantity: comp.quantity ?? 1,
+                        isDefault: comp.isDefault ?? true,
+                    },
+                });
+            }
         }
     }
     console.log('✅ Busbars done');

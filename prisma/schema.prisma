@@ -1,9 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
 generator client {
   provider = "prisma-client-js"
   output   = "../src/generated/prisma"
@@ -15,94 +9,94 @@ datasource db {
 }
 
 model Category {
-  id          Int       @id @default(autoincrement())
+  id          Int         @id @default(autoincrement())
   name        String
-  slug        String    @unique
-  description String    // ← добавляем описание
+  slug        String      @unique
+  description String
   products    Busbar[]
   component   Component[]
 }
 
 model Brand {
-  id        Int       @id @default(autoincrement())
-  name      String
-  slug      String    @unique
-  busbars   Busbar[]
-  series    Series[]
-  components   Component[]
-  createdAt DateTime  @default(now())
-  updatedAt DateTime  @updatedAt
+  id          Int         @id @default(autoincrement())
+  name        String
+  slug        String      @unique
+  busbars     Busbar[]
+  series      Series[]
+  components  Component[]
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
 }
 
 model BusbarType {
-  id        Int       @id @default(autoincrement())
-  name      String
-  slug      String    @unique
-  busbars   Busbar[]
-  components   Component[]
-  createdAt DateTime  @default(now())
-  updatedAt DateTime  @updatedAt
+  id          Int         @id @default(autoincrement())
+  name        String
+  slug        String      @unique
+  busbars     Busbar[]
+  components  Component[]
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
 }
 
 model Series {
-  id        Int       @id @default(autoincrement())
-  name      String
-  slug      String    @unique
+  id          Int         @id @default(autoincrement())
+  name        String
+  slug        String      @unique
   description String?
-  brandId   Int
-  brand     Brand     @relation(fields: [brandId], references: [id])
-  busbars   Busbar[]
-  components   Component[]
-  createdAt DateTime  @default(now())
-  updatedAt DateTime  @updatedAt
+  brandId     Int
+  brand       Brand       @relation(fields: [brandId], references: [id])
+  busbars     Busbar[]
+  components  Component[]
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
 }
 
 model Busbar {
-  id          Int          @id @default(autoincrement())
+  id          Int                @id @default(autoincrement())
   name        String
-  slug        String       @unique
-  amperage    Int          // 60, 100, 1000 и т.д.
+  slug        String             @unique
+  amperage    Int
   description String?
   imageUrl    String?
-  specs       Json // JSON или markdown
-  drawingUrl  String?  // ссылки на доки
+  specs       Json
+  drawingUrl  String?
   categoryId  Int
-  category    Category     @relation(fields: [categoryId], references: [id])
+  category    Category           @relation(fields: [categoryId], references: [id])
   brandId     Int
-  brand       Brand        @relation(fields: [brandId], references: [id])
+  brand       Brand              @relation(fields: [brandId], references: [id])
   typeId      Int
-  type        BusbarType   @relation(fields: [typeId], references: [id])
+  type        BusbarType         @relation(fields: [typeId], references: [id])
   seriesId    Int
-  series      Series       @relation(fields: [seriesId], references: [id])
-  components  BusbarComponent[] // 🔹 связь через join-модель
-  createdAt   DateTime     @default(now())
-  updatedAt   DateTime     @updatedAt
+  series      Series             @relation(fields: [seriesId], references: [id])
+
+  components  BusbarComponent[] // 🔹 теперь опционально
+  createdAt   DateTime           @default(now())
+  updatedAt   DateTime           @updatedAt
 }
 
-//Component — детали (подвес, секция, соединитель и т.д.)
 model Component {
-  id          Int          @id @default(autoincrement())
+  id          Int                @id @default(autoincrement())
   name        String
-  slug        String       @unique
-  type        ComponentType
+  slug        String             @unique
   description String?
-  isOptional  Boolean      @default(false) // если true → дополнительный комплектующий
+  isOptional  Boolean            @default(false)
   imageUrl    String?
-  drawingUrl  String?  // ссылки на доки
-  specs       Json
-  price       Float
+  drawingUrl  String?
+  specs       Json?
+  price       Float?
+
   categoryId  Int
-  category    Category     @relation(fields: [categoryId], references: [id])
+  category    Category           @relation(fields: [categoryId], references: [id])
   brandId     Int
-  brand       Brand        @relation(fields: [brandId], references: [id])
+  brand       Brand              @relation(fields: [brandId], references: [id])
   typeId      Int
-  busbarType  BusbarType   @relation(fields: [typeId], references: [id])
+  busbarType  BusbarType         @relation(fields: [typeId], references: [id])
   seriesId    Int
-  series      Series       @relation(fields: [seriesId], references: [id])
-  
-  busbars     BusbarComponent[] // 🔹 связь через join-модель
-  createdAt   DateTime     @default(now())
-  updatedAt   DateTime     @updatedAt
+  series      Series             @relation(fields: [seriesId], references: [id])
+
+  busbars     BusbarComponent[] // 🔹 теперь опционально
+  createdAt   DateTime           @default(now())
+  updatedAt   DateTime           @updatedAt
 }
 
 /// Join-модель для Busbar ↔ Component
@@ -115,11 +109,8 @@ model BusbarComponent {
 
   busbar      Busbar    @relation(fields: [busbarId], references: [id])
   component   Component @relation(fields: [componentId], references: [id])
-}
 
-enum ComponentType {
-  MAIN        // корпус, подвес, соединение
-  ADDITIONAL  // подвод питания, указатель и т.д.
+  @@unique([busbarId, componentId]) // 🔹 чтобы не было дублей
 }
 
 model Inquiry {

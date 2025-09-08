@@ -24,6 +24,10 @@
         {
             "name": "Vahle",
             "slug": "vahle"
+        },
+        {
+            "name": "Anneng",
+            "slug": "anneng"
         }
     ],
     "busbarTypes": [
@@ -61,64 +65,351 @@
             "name": "5 шин",
             "slug": "5-poles-vahle",
             "brandSlug": "vahle"
+        },
+        {
+            "name": "HFP56",
+            "slug": "hfp56",
+            "brandSlug": "anneng"
         }
     ],
     "busbars": [
         {
-            "name": "Шинопровод 60А (4 шины)",
-            "slug": "giovenzana-4p-60a",
+            "name": "Шинопровод 60А, 4P",
+            "slug": "busbar-60a-4p",
             "description": "Шинопровод для токоподвода, 60А, 4 полюса",
             "amperage": 60,
             "imageUrl": "/image/products/busbar.jpg",
-            "drawingUrl": "/documemts/trolley-60a.pdf",
-            "specs": { "мощность": 60, "полюсов": 4 },
+            "drawingUrl": "/drawings/busbar-60a.dxf",
+            "specs": { "Номинальная мощность (А)": 60, "Кол-во полюсов": 4 },
             "categorySlug": "busbars",
             "brandSlug": "giovenzana",
             "typeSlug": "trolley",
             "seriesSlug": "4-poles",
             "components": [
                 { "slug": "housing-giovenzana-4p", "quantity": 1 },
-                { "slug": "hanger-giovenzana-4p", "quantity": 5 },
-                { "slug": "connector-giovenzana-4p", "quantity": 4 },
-                { "slug": "end-cap-giovenzana-4p", "quantity": 2 }
+                { "slug": "hanger-giovenzana-4p", "quantity": 3 },
+                { "slug": "connector-giovenzana-4p", "quantity": 4 }
             ]
         },
         {
-            "name": "Шинопровод 100А (5 шин)",
-            "slug": "giovenzana-5p-100a",
-            "description": "Шинопровод для токоподвода, 100А, 5 полюсов",
-            "amperage": 100,
-            "imageUrl": "/image/products/busbar.jpg",
-            "drawingUrl": "/documemts/trolley-100a.pdf",
-            "specs": { "amperage": 100, "poles": 5 },
+            "name": "Троллейный шинопровод Anneng серии HFP56 35А",
+            "slug": "anneng-hfp56-4-35",
+            "description": "Закрытый троллейный шинопровод Anneng серии HFP56, 4 полюса, 35 ампер",
+            "amperage": 35,
+            "imageUrl": "/image/products/trollejnyj-shinoprovod-anneng-hfp56.png",
+            "drawingUrl": "/documents/katalog-anneng-zakrytyj-trollejnyj-shinoprovod-serii-hfp-56.pdf",
+            "specs": {
+                "Номинальная мощность (А)": 35,
+                "Кол-во полюсов": 4,
+                "Сечение проводника (мм2)": 8,
+                "Напряжение (В)": 660,
+                "Тип корпуса": "ПВХ",
+                "Длина секции (м)": 4
+            },
             "categorySlug": "busbars",
-            "brandSlug": "giovenzana",
+            "brandSlug": "anneng",
             "typeSlug": "trolley",
-            "seriesSlug": "5-poles",
-            "components": [
-                { "slug": "housing-giovenzana-4p", "quantity": 1 },
-                { "slug": "hanger-giovenzana-4p", "quantity": 5 },
-                { "slug": "connector-giovenzana-4p", "quantity": 5 },
-                { "slug": "end-cap-giovenzana-4p", "quantity": 2 }
-            ]
+            "seriesSlug": "hfp56"
         },
         {
-            "name": "Шинопровод 1000А (5 шин)",
-            "slug": "vahle-5p-1000a",
-            "description": "Монотроллейный шинопровод для токоподвода, 1000А, 1 полюс",
-            "amperage": 1000,
-            "imageUrl": "/image/products/busbar.jpg",
-            "drawingUrl": "/documemts/trolley-1000a.pdf",
-            "specs": { "amperage": 1000, "poles": 1 },
+            "name": "Троллейный шинопровод Anneng серии HFP56 50А",
+            "slug": "anneng-hfp56-4-50",
+            "description": "Закрытый троллейный шинопровод Anneng серии HFP56, 4 полюса, 50 ампер",
+            "amperage": 50,
+            "imageUrl": "/image/products/trollejnyj-shinoprovod-anneng-hfp56.png",
+            "drawingUrl": "/documents/katalog-anneng-zakrytyj-trollejnyj-shinoprovod-serii-hfp-56.pdf",
+            "specs": {
+                "Номинальная мощность (А)": 50,
+                "Кол-во полюсов": 4,
+                "Сечение проводника (мм2)": 10,
+                "Напряжение (В)": 660,
+                "Тип корпуса": "ПВХ",
+                "Длина секции (м)": 4
+            },
             "categorySlug": "busbars",
-            "brandSlug": "vahle",
-            "typeSlug": "mono-trolley",
-            "seriesSlug": "1-poles-vahle",
-            "components": [
-                { "slug": "housing-vahle-5p", "quantity": 1 },
-                { "slug": "hanger-vahle-5p", "quantity": 5 },
-                { "slug": "power-supply-vahle-5p", "quantity": 5 }
-            ]
+            "brandSlug": "anneng",
+            "typeSlug": "trolley",
+            "seriesSlug": "hfp56"
+        },
+        {
+            "name": "Троллейный шинопровод Anneng серии HFP56 65А",
+            "slug": "anneng-hfp56-4-65",
+            "description": "Закрытый троллейный шинопровод Anneng серии HFP56, 4 полюса, 65 ампер",
+            "amperage": 65,
+            "imageUrl": "/image/products/trollejnyj-shinoprovod-anneng-hfp56.png",
+            "drawingUrl": "/documents/katalog-anneng-zakrytyj-trollejnyj-shinoprovod-serii-hfp-56.pdf",
+            "specs": {
+                "Номинальная мощность (А)": 65,
+                "Кол-во полюсов": 4,
+                "Сечение проводника (мм2)": 12,
+                "Напряжение (В)": 660,
+                "Тип корпуса": "ПВХ",
+                "Длина секции (м)": 4
+            },
+            "categorySlug": "busbars",
+            "brandSlug": "anneng",
+            "typeSlug": "trolley",
+            "seriesSlug": "hfp56"
+        },
+        {
+            "name": "Троллейный шинопровод Anneng серии HFP56 80А",
+            "slug": "anneng-hfp56-4-80",
+            "description": "Закрытый троллейный шинопровод Anneng серии HFP56, 4 полюса, 80 ампер",
+            "amperage": 80,
+            "imageUrl": "/image/products/trollejnyj-shinoprovod-anneng-hfp56.png",
+            "drawingUrl": "/documents/katalog-anneng-zakrytyj-trollejnyj-shinoprovod-serii-hfp-56.pdf",
+            "specs": {
+                "Номинальная мощность (А)": 80,
+                "Кол-во полюсов": 4,
+                "Сечение проводника (мм2)": 15,
+                "Напряжение (В)": 660,
+                "Тип корпуса": "ПВХ",
+                "Длина секции (м)": 4
+            },
+            "categorySlug": "busbars",
+            "brandSlug": "anneng",
+            "typeSlug": "trolley",
+            "seriesSlug": "hfp56"
+        },
+        {
+            "name": "Троллейный шинопровод Anneng серии HFP56 100А",
+            "slug": "anneng-hfp56-4-100",
+            "description": "Закрытый троллейный шинопровод Anneng серии HFP56, 4 полюса, 100 ампер",
+            "amperage": 100,
+            "imageUrl": "/image/products/trollejnyj-shinoprovod-anneng-hfp56.png",
+            "drawingUrl": "/documents/katalog-anneng-zakrytyj-trollejnyj-shinoprovod-serii-hfp-56.pdf",
+            "specs": {
+                "Номинальная мощность (А)": 100,
+                "Кол-во полюсов": 4,
+                "Сечение проводника (мм2)": 20,
+                "Напряжение (В)": 660,
+                "Тип корпуса": "ПВХ",
+                "Длина секции (м)": 4
+            },
+            "categorySlug": "busbars",
+            "brandSlug": "anneng",
+            "typeSlug": "trolley",
+            "seriesSlug": "hfp56"
+        },
+        {
+            "name": "Троллейный шинопровод Anneng серии HFP56 120А",
+            "slug": "anneng-hfp56-4-120",
+            "description": "Закрытый троллейный шинопровод Anneng серии HFP56, 4 полюса, 120 ампер",
+            "amperage": 120,
+            "imageUrl": "/image/products/trollejnyj-shinoprovod-anneng-hfp56.png",
+            "drawingUrl": "/documents/katalog-anneng-zakrytyj-trollejnyj-shinoprovod-serii-hfp-56.pdf",
+            "specs": {
+                "Номинальная мощность (А)": 120,
+                "Кол-во полюсов": 4,
+                "Сечение проводника (мм2)": 25,
+                "Напряжение (В)": 660,
+                "Тип корпуса": "ПВХ",
+                "Длина секции (м)": 4
+            },
+            "categorySlug": "busbars",
+            "brandSlug": "anneng",
+            "typeSlug": "trolley",
+            "seriesSlug": "hfp56"
+        },
+        {
+            "name": "Троллейный шинопровод Anneng серии HFP56 140А",
+            "slug": "anneng-hfp56-4-140",
+            "description": "Закрытый троллейный шинопровод Anneng серии HFP56, 4 полюса, 140 ампер",
+            "amperage": 140,
+            "imageUrl": "/image/products/trollejnyj-shinoprovod-anneng-hfp56.png",
+            "drawingUrl": "/documents/katalog-anneng-zakrytyj-trollejnyj-shinoprovod-serii-hfp-56.pdf",
+            "specs": {
+                "Номинальная мощность (А)": 140,
+                "Кол-во полюсов": 4,
+                "Сечение проводника (мм2)": 35,
+                "Напряжение (В)": 660,
+                "Тип корпуса": "ПВХ",
+                "Длина секции (м)": 4
+            },
+            "categorySlug": "busbars",
+            "brandSlug": "anneng",
+            "typeSlug": "trolley",
+            "seriesSlug": "hfp56"
+        },
+        {
+            "name": "Троллейный шинопровод Anneng серии HFP56 170А",
+            "slug": "anneng-hfp56-4-170",
+            "description": "Закрытый троллейный шинопровод Anneng серии HFP56, 4 полюса, 170 ампер",
+            "amperage": 170,
+            "imageUrl": "/image/products/trollejnyj-shinoprovod-anneng-hfp56.png",
+            "drawingUrl": "/documents/katalog-anneng-zakrytyj-trollejnyj-shinoprovod-serii-hfp-56.pdf",
+            "specs": {
+                "Номинальная мощность (А)": 170,
+                "Кол-во полюсов": 4,
+                "Сечение проводника (мм2)": 50,
+                "Напряжение (В)": 660,
+                "Тип корпуса": "ПВХ",
+                "Длина секции (м)": 4
+            },
+            "categorySlug": "busbars",
+            "brandSlug": "anneng",
+            "typeSlug": "trolley",
+            "seriesSlug": "hfp56"
+        },
+        {
+            "name": "Троллейный шинопровод Anneng серии HFP56 210А",
+            "slug": "anneng-hfp56-4-210",
+            "description": "Закрытый троллейный шинопровод Anneng серии HFP56, 4 полюса, 210 ампер",
+            "amperage": 210,
+            "imageUrl": "/image/products/trollejnyj-shinoprovod-anneng-hfp56.png",
+            "drawingUrl": "/documents/katalog-anneng-zakrytyj-trollejnyj-shinoprovod-serii-hfp-56.pdf",
+            "specs": {
+                "Номинальная мощность (А)": 210,
+                "Кол-во полюсов": 4,
+                "Сечение проводника (мм2)": 70,
+                "Напряжение (В)": 660,
+                "Тип корпуса": "ПВХ",
+                "Длина секции (м)": 4
+            },
+            "categorySlug": "busbars",
+            "brandSlug": "anneng",
+            "typeSlug": "trolley",
+            "seriesSlug": "hfp56"
+        },
+        {
+            "name": "Троллейный шинопровод Anneng серии HFP56 240А",
+            "slug": "anneng-hfp56-4-240",
+            "description": "Закрытый троллейный шинопровод Anneng серии HFP56, 4 полюса, 240 ампер",
+            "amperage": 240,
+            "imageUrl": "/image/products/trollejnyj-shinoprovod-anneng-hfp56.png",
+            "drawingUrl": "/documents/katalog-anneng-zakrytyj-trollejnyj-shinoprovod-serii-hfp-56.pdf",
+            "specs": {
+                "Номинальная мощность (А)": 240,
+                "Кол-во полюсов": 4,
+                "Сечение проводника (мм2)": 80,
+                "Напряжение (В)": 660,
+                "Тип корпуса": "ПВХ",
+                "Длина секции (м)": 4
+            },
+            "categorySlug": "busbars",
+            "brandSlug": "anneng",
+            "typeSlug": "trolley",
+            "seriesSlug": "hfp56"
+        },
+        {
+            "name": "Троллейный шинопровод Anneng серии HFP56 50А",
+            "slug": "anneng-hfp56-3-50",
+            "description": "Закрытый троллейный шинопровод Anneng серии HFP56, 3 полюса, 50 ампер",
+            "amperage": 50,
+            "imageUrl": "/image/products/trollejnyj-shinoprovod-anneng-hfp56.png",
+            "drawingUrl": "/documents/katalog-anneng-zakrytyj-trollejnyj-shinoprovod-serii-hfp-56.pdf",
+            "specs": {
+                "Номинальная мощность (А)": 50,
+                "Кол-во полюсов": 3,
+                "Сечение проводника (мм2)": 10,
+                "Напряжение (В)": 660,
+                "Тип корпуса": "ПВХ",
+                "Длина секции (м)": 4
+            },
+            "categorySlug": "busbars",
+            "brandSlug": "anneng",
+            "typeSlug": "trolley",
+            "seriesSlug": "hfp56"
+        },
+        {
+            "name": "Троллейный шинопровод Anneng серии HFP56 80А",
+            "slug": "anneng-hfp56-3-80",
+            "description": "Закрытый троллейный шинопровод Anneng серии HFP56, 3 полюса, 80 ампер",
+            "amperage": 80,
+            "imageUrl": "/image/products/trollejnyj-shinoprovod-anneng-hfp56.png",
+            "drawingUrl": "/documents/katalog-anneng-zakrytyj-trollejnyj-shinoprovod-serii-hfp-56.pdf",
+            "specs": {
+                "Номинальная мощность (А)": 80,
+                "Кол-во полюсов": 3,
+                "Сечение проводника (мм2)": 15,
+                "Напряжение (В)": 660,
+                "Тип корпуса": "ПВХ",
+                "Длина секции (м)": 4
+            },
+            "categorySlug": "busbars",
+            "brandSlug": "anneng",
+            "typeSlug": "trolley",
+            "seriesSlug": "hfp56"
+        },
+        {
+            "name": "Троллейный шинопровод Anneng серии HFP56 100А",
+            "slug": "anneng-hfp56-3-100",
+            "description": "Закрытый троллейный шинопровод Anneng серии HFP56, 3 полюса, 100 ампер",
+            "amperage": 100,
+            "imageUrl": "/image/products/trollejnyj-shinoprovod-anneng-hfp56.png",
+            "drawingUrl": "/documents/katalog-anneng-zakrytyj-trollejnyj-shinoprovod-serii-hfp-56.pdf",
+            "specs": {
+                "Номинальная мощность (А)": 100,
+                "Кол-во полюсов": 3,
+                "Сечение проводника (мм2)": 20,
+                "Напряжение (В)": 660,
+                "Тип корпуса": "ПВХ",
+                "Длина секции (м)": 4
+            },
+            "categorySlug": "busbars",
+            "brandSlug": "anneng",
+            "typeSlug": "trolley",
+            "seriesSlug": "hfp56"
+        },
+        {
+            "name": "Троллейный шинопровод Anneng серии HFP56 120А",
+            "slug": "anneng-hfp56-3-120",
+            "description": "Закрытый троллейный шинопровод Anneng серии HFP56, 3 полюса, 120 ампер",
+            "amperage": 120,
+            "imageUrl": "/image/products/trollejnyj-shinoprovod-anneng-hfp56.png",
+            "drawingUrl": "/documents/katalog-anneng-zakrytyj-trollejnyj-shinoprovod-serii-hfp-56.pdf",
+            "specs": {
+                "Номинальная мощность (А)": 120,
+                "Кол-во полюсов": 3,
+                "Сечение проводника (мм2)": 25,
+                "Напряжение (В)": 660,
+                "Тип корпуса": "ПВХ",
+                "Длина секции (極)": 4
+            },
+            "categorySlug": "busbars",
+            "brandSlug": "anneng",
+            "typeSlug": "trolley",
+            "seriesSlug": "hfp56"
+        },
+        {
+            "name": "Троллейный шинопровод Anneng серии HFP56 140А",
+            "slug": "anneng-hfp56-3-140",
+            "description": "Закрытый троллейный шинопровод Anneng серии HFP56, 3 полюса, 140 ампер",
+            "amperage": 140,
+            "imageUrl": "/image/products/trollejnyj-shinoprovod-anneng-hfp56.png",
+            "drawingUrl": "/documents/katalog-anneng-zakrytyj-trollejnyj-shinoprovod-serii-hfp-56.pdf",
+            "specs": {
+                "Номинальная мощность (А)": 140,
+                "Кол-во полюсов": 3,
+                "Сечение проводника (мм2)": 35,
+                "Напряжение (В)": 660,
+                "Тип корпуса": "ПВХ",
+                "Длина секции (м)": 4
+            },
+            "categorySlug": "busbars",
+            "brandSlug": "anneng",
+            "typeSlug": "trolley",
+            "seriesSlug": "hfp56"
+        },
+        {
+            "name": "Троллейный шинопровод Anneng серии HFP56 170А",
+            "slug": "anneng-hfp56-3-170",
+            "description": "Закрытый троллейный шинопровод Anneng серии HFP56, 3 полюса, 170 ампер",
+            "amperage": 170,
+            "imageUrl": "/image/products/trollejnyj-shinoprovod-anneng-hfp56.png",
+            "drawingUrl": "/documents/katalog-anneng-zakrytyj-trollejnyj-shinoprovod-serii-hfp-56.pdf",
+            "specs": {
+                "Номинальная мощность (А)": 170,
+                "Кол-во полюсов": 3,
+                "Сечение проводника (мм2)": 50,
+                "Напряжение (В)": 660,
+                "Тип корпуса": "ПВХ",
+                "Длина секции (м)": 4
+            },
+            "categorySlug": "busbars",
+            "brandSlug": "anneng",
+            "typeSlug": "trolley",
+            "seriesSlug": "hfp56"
         }
     ],
     "components": [

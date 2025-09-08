@@ -5,19 +5,19 @@ import { ProductCard } from '@/components/ProductCard';
 export default async function BusbarCatalogPage({
     searchParams,
 }: {
-    searchParams: { series?: string };
+    searchParams: { brands?: string };
 }) {
-    const seriesSlug = Array.isArray(searchParams.series)
-        ? searchParams.series[0]
-        : searchParams.series;
+    const brandsSlug = Array.isArray(searchParams.brands)
+        ? searchParams.brands[0]
+        : searchParams.brands;
 
-    const seriesList = await prisma.series.findMany({
+    const brandsList = await prisma.brand.findMany({
         where: { busbars: { some: {} } },
     });
 
     const where: any = {
         category: { is: { slug: 'busbars' } },
-        ...(seriesSlug ? { series: { is: { slug: seriesSlug } } } : {}),
+        ...(brandsSlug ? { brand: { is: { slug: brandsSlug } } } : {}),
     };
 
     const busbars = await prisma.busbar.findMany({
@@ -34,15 +34,15 @@ export default async function BusbarCatalogPage({
             <div className="mb-6 flex flex-wrap gap-4">
                 <Link
                     href="/catalog/busbars"
-                    className={`filter-pill ${!seriesSlug ? 'active' : ''}`}
+                    className={`filter-pill ${!brandsSlug ? 'active' : ''}`}
                 >
                     Все серии
                 </Link>
-                {seriesList.map((s) => (
+                {brandsList.map((s) => (
                     <Link
                         key={s.slug}
-                        href={`/catalog/busbars?series=${s.slug}`}
-                        className={`filter-pill ${seriesSlug === s.slug ? 'active' : ''}`}
+                        href={`/catalog/busbars?brands=${s.slug}`}
+                        className={`filter-pill ${brandsSlug === s.slug ? 'active' : ''}`}
                     >
                         {s.name}
                     </Link>
@@ -50,7 +50,7 @@ export default async function BusbarCatalogPage({
             </div>
 
             {/* Сетка товаров */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                 {busbars.map((p) => (
                     <ProductCard
                         key={p.id}

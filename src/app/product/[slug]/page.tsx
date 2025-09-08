@@ -29,12 +29,6 @@ export async function generateMetadata({ params }: PageProps) {
             images: [{ url: image }],
             type: 'website',
         },
-        twitter: {
-            card: 'summary_large_image',
-            title,
-            description,
-            images: [image],
-        },
     };
 }
 
@@ -109,9 +103,9 @@ export default async function ProductPage({ params }: PageProps) {
                     )}
 
                     {/* Категория для всех */}
-                    {isProduct && (
+                    {/* {isProduct && (
                         <p className="mb-2 text-sm text-muted">Категория: {item.category?.name}</p>
-                    )}
+                    )} */}
 
                     <p className="mb-6">{item.description}</p>
 
