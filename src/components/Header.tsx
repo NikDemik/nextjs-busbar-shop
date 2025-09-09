@@ -50,7 +50,15 @@ export default function Header() {
                             onMouseLeave={() => setCatalogOpen(false)}
                             className="relative"
                         >
-                            <button className="hover:underline">Каталог</button>
+                            <button
+                                className={
+                                    isActive('/catalog')
+                                        ? 'text-[var(--color-accent)]'
+                                        : 'hover:underline'
+                                }
+                            >
+                                Каталог товаров
+                            </button>
                             <AnimatePresence>
                                 {catalogOpen && (
                                     <motion.div
@@ -58,29 +66,45 @@ export default function Header() {
                                         animate={{ opacity: 1, y: 0 }}
                                         exit={{ opacity: 0, y: -5 }}
                                         transition={{ duration: 0.2 }}
-                                        className="absolute top-full left-0 mt-2 w-56 bg-white text-[var(--color-text)] rounded-lg shadow-soft z-50"
+                                        className="absolute top-full left-0 mt-2 w-56 bg-white text-[var(--color-text)] rounded-lg shadow-soft z-50 overflow-hidden"
                                     >
                                         <Link
                                             href="/catalog"
-                                            className="block px-4 py-2 hover:bg-[var(--color-bg-soft)]"
+                                            className={`block px-4 py-2 hover:bg-[var(--color-bg-soft)] ${
+                                                isActive('/catalog')
+                                                    ? 'text-[var(--color-accent)]'
+                                                    : ''
+                                            }`}
                                         >
                                             Все товары
                                         </Link>
                                         <Link
                                             href="/catalog/busbars"
-                                            className="block px-4 py-2 hover:bg-[var(--color-bg-soft)]"
+                                            className={`block px-4 py-2 hover:bg-[var(--color-bg-soft)] ${
+                                                isActive('/catalog/busbars')
+                                                    ? 'text-[var(--color-accent)]'
+                                                    : ''
+                                            }`}
                                         >
                                             Шинопроводы
                                         </Link>
                                         <Link
                                             href="/catalog/components"
-                                            className="block px-4 py-2 hover:bg-[var(--color-bg-soft)]"
+                                            className={`block px-4 py-2 hover:bg-[var(--color-bg-soft)] ${
+                                                isActive('/catalog/components')
+                                                    ? 'text-[var(--color-accent)]'
+                                                    : ''
+                                            }`}
                                         >
                                             Комплектующие
                                         </Link>
                                         <Link
                                             href="/catalog/kits"
-                                            className="block px-4 py-2 hover:bg-[var(--color-bg-soft)]"
+                                            className={`block px-4 py-2 hover:bg-[var(--color-bg-soft)] ${
+                                                isActive('/catalog/kits')
+                                                    ? 'text-[var(--color-accent)]'
+                                                    : ''
+                                            }`}
                                         >
                                             Готовые комплекты
                                         </Link>
@@ -91,31 +115,47 @@ export default function Header() {
 
                         <Link
                             href="/constructor"
-                            className="isActive('/constructor') ? 'underline font-semibold' : 'hover:underline'"
+                            className={
+                                isActive('/constructor')
+                                    ? 'text-[var(--color-accent)]'
+                                    : 'hover:underline'
+                            }
                         >
                             Конструктор
                         </Link>
                         <Link
                             href="/news"
-                            className="isActive('/news') ? 'underline font-semibold' : 'hover:underline'"
+                            className={
+                                isActive('/news') ? 'text-[var(--color-accent)]' : 'hover:underline'
+                            }
                         >
                             Новости
                         </Link>
                         <Link
                             href="/docs"
-                            className="isActive('/docs') ? 'underline font-semibold' : 'hover:underline'"
+                            className={
+                                isActive('/docs') ? 'text-[var(--color-accent)]' : 'hover:underline'
+                            }
                         >
                             Документация
                         </Link>
                         <Link
                             href="/about"
-                            className="isActive('/about') ? 'underline font-semibold' : 'hover:underline'"
+                            className={
+                                isActive('/about')
+                                    ? 'text-[var(--color-accent)]'
+                                    : 'hover:underline'
+                            }
                         >
                             О нас
                         </Link>
                         <Link
                             href="/contacts"
-                            className="isActive('/contacts') ? 'underline font-semibold' : 'hover:underline'"
+                            className={
+                                isActive('/contacts')
+                                    ? 'text-[var(--color-accent)]'
+                                    : 'hover:underline'
+                            }
                         >
                             Контакты
                         </Link>

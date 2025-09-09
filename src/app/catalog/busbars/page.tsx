@@ -27,7 +27,7 @@ export default async function BusbarCatalogPage({
     });
 
     return (
-        <main className="py-12 container-padding mx-auto">
+        <main className="container-padding mx-auto py-12">
             <h1 className="text-3xl font-bold mb-6">Шинопроводы</h1>
 
             {/* Фильтр по сериям */}
