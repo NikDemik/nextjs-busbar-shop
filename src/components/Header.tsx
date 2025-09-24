@@ -71,7 +71,7 @@ export default function Header() {
                                         <Link
                                             href="/catalog"
                                             className={`block px-4 py-2 hover:bg-[var(--color-bg-soft)] ${
-                                                isActive('/catalog')
+                                                pathname === '/catalog'
                                                     ? 'text-[var(--color-accent)]'
                                                     : ''
                                             }`}
@@ -81,7 +81,7 @@ export default function Header() {
                                         <Link
                                             href="/catalog/busbars"
                                             className={`block px-4 py-2 hover:bg-[var(--color-bg-soft)] ${
-                                                isActive('/catalog/busbars')
+                                                pathname === '/catalog/busbars'
                                                     ? 'text-[var(--color-accent)]'
                                                     : ''
                                             }`}
@@ -91,7 +91,7 @@ export default function Header() {
                                         <Link
                                             href="/catalog/components"
                                             className={`block px-4 py-2 hover:bg-[var(--color-bg-soft)] ${
-                                                isActive('/catalog/components')
+                                                pathname === '/catalog/components'
                                                     ? 'text-[var(--color-accent)]'
                                                     : ''
                                             }`}
@@ -101,7 +101,7 @@ export default function Header() {
                                         <Link
                                             href="/catalog/kits"
                                             className={`block px-4 py-2 hover:bg-[var(--color-bg-soft)] ${
-                                                isActive('/catalog/kits')
+                                                pathname === '/catalog/kits'
                                                     ? 'text-[var(--color-accent)]'
                                                     : ''
                                             }`}
