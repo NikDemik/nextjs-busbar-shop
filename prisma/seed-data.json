@@ -92,6 +92,24 @@
             ]
         },
         {
+            "name": "Шинопровод Giovenzana 60А, 4P, 12 метров",
+            "slug": "busbar-60a-4p-12m",
+            "description": "Шинопровод для токоподвода, 60А, 4 полюса, 12 метров",
+            "amperage": 60,
+            "imageUrl": "/image/products/busbar.jpg",
+            "drawingUrl": "/drawings/busbar-60a.dxf",
+            "specs": { "Номинальная мощность (А)": 60, "Кол-во полюсов": 4 },
+            "categorySlug": "kits",
+            "brandSlug": "giovenzana",
+            "typeSlug": "trolley",
+            "seriesSlug": "4-poles",
+            "components": [
+                { "slug": "housing-giovenzana-4p", "quantity": 3 },
+                { "slug": "hanger-giovenzana-4p", "quantity": 9 },
+                { "slug": "connector-giovenzana-4p", "quantity": 2 }
+            ]
+        },
+        {
             "name": "Троллейный шинопровод Anneng серии HFP56 35А",
             "slug": "anneng-hfp56-4-35",
             "description": "Закрытый троллейный шинопровод Anneng серии HFP56, 4 полюса, 35 ампер",

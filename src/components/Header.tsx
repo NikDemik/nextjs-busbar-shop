@@ -66,7 +66,7 @@ export default function Header() {
                                         animate={{ opacity: 1, y: 0 }}
                                         exit={{ opacity: 0, y: -5 }}
                                         transition={{ duration: 0.2 }}
-                                        className="absolute top-full left-0 mt-2 w-56 bg-white text-[var(--color-text)] rounded-lg shadow-soft z-50 overflow-hidden"
+                                        className="absolute top-full left-0 mt-4 w-56 py-4 px-4 border-[var(--color-accent)] border-t-4 bg-white text-[var(--color-text)] rounded-lg shadow-soft z-50 overflow-hidden"
                                     >
                                         <Link
                                             href="/catalog"

@@ -108,6 +108,10 @@
         padding-right: max(1rem, 5vw);
     }
 
+    .container-padding-l {
+        padding-left: max(1rem, 5vw);
+    }
+
     .filter-pill {
         @apply px-4 py-1 border rounded-full text-sm hover:bg-gray-100;
     }

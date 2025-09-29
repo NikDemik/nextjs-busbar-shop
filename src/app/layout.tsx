@@ -23,7 +23,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <html lang="ru" className={inter.className}>
             <body className="min-h-screen flex flex-col">
                 <Header />
-                <main className="bg-[var(--color-bg)] text-[var(--color-text)] flex-1 py-6">
+                <main className="bg-[var(--color-bg)] text-[var(--color-text)] flex-1">
                     {children}
                 </main>
                 <Footer />
