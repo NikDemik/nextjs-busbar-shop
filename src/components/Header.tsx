@@ -17,7 +17,7 @@ export default function Header() {
     return (
         <header className="w-full z-50">
             {/* ВЕРХНЯЯ ПОЛОСА */}
-            <div className="bg-[#132d2d] text-white text-sm">
+            <div className="bg-gradient text-white text-sm">
                 <div className="container-padding flex justify-end items-center h-9 gap-6">
                     <a
                         href={`tel:${contactData.phone}`}
@@ -38,12 +38,12 @@ export default function Header() {
             <div className="header shadow-sm">
                 <div className="container-padding py-4 flex items-center justify-between">
                     {/* ЛОГОТИП */}
-                    <Link href="/" className="text-xl font-bold tracking-wide text-white">
+                    <Link href="/" className="text-xl font-bold tracking-wide text-foreground">
                         Троллейный шинопровод
                     </Link>
 
                     {/* ДЕСКТОП МЕНЮ */}
-                    <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-white relative">
+                    <nav className="hidden lg:flex items-center gap-6 text-sm font-medium text-foreground relative">
                         {/* КАТАЛОГ С ВЫПАДАЮЩИМ МЕНЮ */}
                         <div
                             onMouseEnter={() => setCatalogOpen(true)}
@@ -165,7 +165,10 @@ export default function Header() {
                     </nav>
 
                     {/* МОБИЛЬНЫЙ БУРГЕР */}
-                    <button className="md:hidden text-white" onClick={() => setMenuOpen(!menuOpen)}>
+                    <button
+                        className="lg:hidden text-accent-foreground"
+                        onClick={() => setMenuOpen(!menuOpen)}
+                    >
                         {menuOpen ? <X size={24} /> : <Menu size={24} />}
                     </button>
                 </div>
@@ -178,7 +181,7 @@ export default function Header() {
                             animate={{ height: 'auto', opacity: 1 }}
                             exit={{ height: 0, opacity: 0 }}
                             transition={{ duration: 0.2 }}
-                            className="md:hidden bg-[var(--color-primary)] px-6 pb-4 space-y-3 text-sm text-white"
+                            className="lg:hidden bg-primary px-6 pb-4 space-y-3 text-sm text-white"
                         >
                             <details className="group">
                                 <summary className="cursor-pointer py-2 hover:underline">

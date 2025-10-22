@@ -2,17 +2,17 @@
 
 /* === Цветовая палитра по макету === */
 :root {
-    --color-primary: #1e3a3a; /* тёмно-зелёный фон хедера */
+    --primary: #1e3a3a; /* тёмно-зелёный фон хедера */
+    --accent: #5bd19c; /* зелёный акцент (Submit/Call) */
+    --accent-foreground: #45b884;
     --color-primary-gradient: linear-gradient(90deg, #1e3a3a, #2c3e50);
-    --color-accent: #5bd19c; /* зелёный акцент (Submit/Call) */
-    --color-accent-hover: #45b884;
 
     --color-bg: #ffffff;
     --color-bg-soft: #f1f5f9;
     --color-surface: #e9f1ed;
     --color-border: #d1d5db;
 
-    --color-text: #1e293b;
+    --foreground: #1e293b;
     --color-text-muted: #64748b;
 
     --font-sans: 'Manrope', sans-serif;
@@ -28,6 +28,13 @@
     --color-text-muted: #94a3b8;
 }
 
+@theme inline {
+    --color-foreground: var(--foreground);
+    --color-primary: var(--primary);
+    --color-accent: var(--accent);
+    --color-accent-foreground: var(--accent-foreground);
+}
+
 /* === BASE === */
 @layer base {
     html {
@@ -37,7 +44,7 @@
     }
 
     body {
-        @apply antialiased;
+        @apply text-foreground antialiased;
     }
 
     h1,
@@ -61,12 +68,12 @@
     }
 
     .btn:hover {
-        background-color: var(--color-accent-hover);
+        background-color: var(--color-accent-foreground);
     }
 
     .header {
-        background: var(--color-primary-gradient);
-        @apply text-white;
+        background: var(--color-bg-soft);
+        @apply text-foreground;
     }
 
     .card {
@@ -88,7 +95,8 @@
     }
 
     .bg-gradient {
-        background-color: var(--color-primary-gradient);
+        @apply bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900
+        /* background-color: var(--color-primary-gradient); */;
     }
 
     .text-muted {
