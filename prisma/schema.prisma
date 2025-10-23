@@ -59,7 +59,10 @@ model Busbar {
   description String?
   imageUrl    String?
   specs       Json
+  price       Float?
   drawingUrl  String?
+  views        Int               @default(0)
+  isFeatured   Boolean           @default(false)
   categoryId  Int
   category    Category           @relation(fields: [categoryId], references: [id])
   brandId     Int
@@ -84,6 +87,8 @@ model Component {
   drawingUrl  String?
   specs       Json?
   price       Float?
+  views        Int       @default(0)
+  isFeatured   Boolean   @default(false)
 
   categoryId  Int
   category    Category           @relation(fields: [categoryId], references: [id])

@@ -3,8 +3,8 @@
 /* === Цветовая палитра по макету === */
 :root {
     --primary: #1e3a3a; /* тёмно-зелёный фон хедера */
-    --accent: #5bd19c; /* зелёный акцент (Submit/Call) */
-    --accent-foreground: #45b884;
+    --accent: oklch(72.3% 0.219 149.579); /* зелёный акцент (Submit/Call) */
+    --accent-foreground: oklch(62.7% 0.194 149.214);
     --color-primary-gradient: linear-gradient(90deg, #1e3a3a, #2c3e50);
 
     --color-bg: #ffffff;
@@ -63,7 +63,7 @@
 /* === COMPONENTS === */
 @layer components {
     .btn {
-        @apply inline-flex items-center justify-center px-5 py-2 rounded-full text-white font-semibold transition;
+        @apply inline-flex items-center justify-center px-8 py-3 rounded-2xl text-white font-semibold transition;
         background-color: var(--color-accent);
     }
 

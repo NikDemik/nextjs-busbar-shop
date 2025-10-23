@@ -6,13 +6,13 @@ import Link from 'next/link';
 export default function HeroBanner() {
     return (
         <section className="w-full bg-gradient text-white">
-            <div className="container-padding-l mx-auto flex flex-col md:flex-row items-center justify-between ">
+            <div className="container-padding md:pr-0! min-h-[300px] mx-auto flex flex-col md:flex-row items-center justify-between ">
                 {/* Левая часть */}
-                <div className="flex-1 text-center md:text-left space-y-6">
-                    <h1 className="text-4xl md:text-6xl uppercase font-bold leading-tight text-accent">
+                <div className="flex-1 py-10 text-center md:text-left space-y-6">
+                    <h1 className="text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl  uppercase font-bold leading-tight text-white">
                         Современные решения шинопровода
                     </h1>
-                    <p className="text-lg text-gray-300 max-w-lg mx-auto md:mx-0">
+                    <p className="text-sm lg:text-md xl:text-lg text-gray-300 max-w-lg mx-auto md:mx-0">
                         Каталог шинопроводов, комплектующих и готовых решений для вашего бизнеса.
                     </p>
                     <Link href="/catalog" className="btn text-white px-6 py-3 shadow-md">
@@ -27,7 +27,7 @@ export default function HeroBanner() {
                         alt="Баннер шинопровод"
                         width={1000}
                         height={600}
-                        className=""
+                        className=" overflow-visible"
                     />
                 </div>
             </div>

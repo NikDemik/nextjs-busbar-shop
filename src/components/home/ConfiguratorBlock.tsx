@@ -27,7 +27,7 @@ export default function ConfiguratorBlock() {
 
                 {/* Правая часть (изображение / иллюстрация) */}
                 <div className="flex-1 mt-10 md:mt-0 flex justify-center relative">
-                    <div className="w-[400px] h-[280px] relative">
+                    <div className="w-[320px] h-[280px] relative">
                         <Image
                             src="/images/configurator-preview.png" // помести изображение в public/images
                             alt="Конфигуратор шинопровода"

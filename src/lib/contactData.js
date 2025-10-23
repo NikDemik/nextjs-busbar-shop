@@ -1,6 +1,7 @@
 // lib/contactData.js
 
 const contactData = {
+    company: 'ООО "Троллейный шинопровод"',
     address: 'г. Долгопрудный, пр-кт Лихачевский, д. 46, стр. 1, этаж 3, помещение №14',
     phone: '+7 (499) 113-11-58',
     email: 'mail@trolley-system.ru',

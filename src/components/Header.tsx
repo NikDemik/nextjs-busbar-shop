@@ -17,19 +17,19 @@ export default function Header() {
     return (
         <header className="w-full z-50">
             {/* ВЕРХНЯЯ ПОЛОСА */}
-            <div className="bg-gradient text-white text-sm">
-                <div className="container-padding flex justify-end items-center h-9 gap-6">
+            <div className="bg-gradient text-white text-sm rounded-es-2xl rounded-ee-2xl">
+                <div className="container-padding flex justify-end items-center h-14 gap-6">
                     <a
                         href={`tel:${contactData.phone}`}
-                        className="flex items-center gap-1 hover:underline"
+                        className="flex items-center gap-1 max-sm:text-[0.8rem] xl:text-[1.2rem]  text-accent font-semibold hover:underline"
                     >
-                        <Phone size={14} /> {contactData.phone}
+                        <Phone size={22} /> {contactData.phone}
                     </a>
                     <a
                         href={`mailto:${contactData.email}`}
-                        className="flex items-center gap-1 hover:underline"
+                        className="flex items-center gap-1 max-sm:text-[0.8rem] xl:text-[1.2rem]  font-medium hover:underline"
                     >
-                        <Mail size={14} /> {contactData.email}
+                        <Mail size={22} /> {contactData.email}
                     </a>
                 </div>
             </div>
@@ -39,7 +39,7 @@ export default function Header() {
                 <div className="container-padding py-4 flex items-center justify-between">
                     {/* ЛОГОТИП */}
                     <Link href="/" className="text-xl font-bold tracking-wide text-foreground">
-                        Троллейный шинопровод
+                        {contactData.company}
                     </Link>
 
                     {/* ДЕСКТОП МЕНЮ */}

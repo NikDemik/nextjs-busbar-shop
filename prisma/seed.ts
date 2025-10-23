@@ -110,6 +110,7 @@ async function main() {
                 imageUrl: b.imageUrl,
                 drawingUrl: b.drawingUrl,
                 specs: b.specs,
+                price: b.price ?? 0,
                 category: { connect: { slug: b.categorySlug } },
                 brand: { connect: { slug: b.brandSlug } },
                 type: { connect: { slug: b.typeSlug } },

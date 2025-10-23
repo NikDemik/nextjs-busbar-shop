@@ -28,8 +28,8 @@ export default function ProductCategories() {
     return (
         <section className="w-full bg-gray-50 dark:bg-gray-900 py-20">
             <div className="max-w-7xl mx-auto px-6 text-center">
-                <h2 className="text-3xl md:text-4xl font-bold mb-12 text-gray-900 dark:text-white">
-                    Категории продукции
+                <h2 className="text-2xl md:text-3xl font-bold mb-12 text-gray-900 dark:text-white">
+                    Ассортимент
                 </h2>
 
                 <div className="grid gap-8 md:grid-cols-3">
