@@ -1,5 +1,6 @@
 import AboutCompany from '@/components/home/AboutCompany';
 import Advantages from '@/components/home/Advantages';
+import BrandLogo from '@/components/home/BrandLogo';
 import CallToActionSection from '@/components/home/CallToAction';
 import ConfiguratorBlock from '@/components/home/ConfiguratorBlock';
 import Documentation from '@/components/home/Documentation';
@@ -14,6 +15,7 @@ export default function HomePage() {
         <div>
             <HeroBanner />
             <ProductCategories />
+            <BrandLogo />
             <PopularProducts />
             <Advantages />
             <PopularSeries />

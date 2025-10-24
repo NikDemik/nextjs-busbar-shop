@@ -3,9 +3,9 @@
 /* === Цветовая палитра по макету === */
 :root {
     --primary: #1e3a3a; /* тёмно-зелёный фон хедера */
-    --accent: oklch(72.3% 0.219 149.579); /* зелёный акцент (Submit/Call) */
-    --accent-foreground: oklch(62.7% 0.194 149.214);
-    --color-primary-gradient: linear-gradient(90deg, #1e3a3a, #2c3e50);
+    --accent: oklch(72.3% 0.219 149.579); /* зелёный акцент (Submit/Call) #00c951 */
+    --accent-foreground: oklch(62.7% 0.194 149.214); /* #00c951 */
+    --color-primary-gradient: linear-gradient(90deg, #1e3a3a, #2c3e50); /* #00a63e */
 
     --color-bg: #ffffff;
     --color-bg-soft: #f1f5f9;
@@ -47,12 +47,12 @@
         @apply text-foreground antialiased;
     }
 
-    h1,
+    /* h1,
     h2,
     h3,
     h4 {
         font-weight: 700;
-    }
+    } */
 
     a {
         text-decoration: none;
