@@ -8,6 +8,7 @@ import HeroBanner from '@/components/home/HeroBanner';
 import PopularProducts from '@/components/home/PopularProducts';
 import PopularSeries from '@/components/home/PopularSeries';
 import ProductCategories from '@/components/home/ProductCategories';
+import StageWork from '@/components/home/StageWork';
 import TestimonialsProjectsSection from '@/components/home/TestimonialsProject';
 
 export default function HomePage() {
@@ -17,8 +18,9 @@ export default function HomePage() {
             <ProductCategories />
             <BrandLogo />
             <PopularProducts />
-            <Advantages />
+            <StageWork />
             <PopularSeries />
+            <Advantages />
             <ConfiguratorBlock />
             <AboutCompany />
             <Documentation />

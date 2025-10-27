@@ -44,32 +44,38 @@
         {
             "name": "1 шина",
             "slug": "1-poles-vahle",
-            "brandSlug": "vahle"
+            "brandSlug": "vahle",
+            "imageUrl": "/image/series/main.png"
         },
         {
-            "name": "4 шины",
-            "slug": "4-poles",
-            "brandSlug": "giovenzana"
+            "name": "TR 60",
+            "slug": "tr-60",
+            "brandSlug": "giovenzana",
+            "imageUrl": "/image/series/main.png"
         },
         {
-            "name": "5 шин",
-            "slug": "5-poles",
-            "brandSlug": "giovenzana"
+            "name": "TR 85",
+            "slug": "tr-85",
+            "brandSlug": "giovenzana",
+            "imageUrl": "/image/series/main.png"
         },
         {
             "name": "4 шины",
             "slug": "4-poles-vahle",
-            "brandSlug": "vahle"
+            "brandSlug": "vahle",
+            "imageUrl": "/image/series/main.png"
         },
         {
             "name": "5 шин",
             "slug": "5-poles-vahle",
-            "brandSlug": "vahle"
+            "brandSlug": "vahle",
+            "imageUrl": "/image/series/main.png"
         },
         {
             "name": "HFP56",
             "slug": "hfp56",
-            "brandSlug": "anneng"
+            "brandSlug": "anneng",
+            "imageUrl": "/image/series/main.png"
         }
     ],
     "busbars": [
@@ -84,7 +90,7 @@
             "categorySlug": "busbars",
             "brandSlug": "giovenzana",
             "typeSlug": "trolley",
-            "seriesSlug": "4-poles",
+            "seriesSlug": "tr-60",
             "components": [
                 { "slug": "housing-giovenzana-4p", "quantity": 1 },
                 { "slug": "hanger-giovenzana-4p", "quantity": 3 },
@@ -102,7 +108,7 @@
             "categorySlug": "kits",
             "brandSlug": "giovenzana",
             "typeSlug": "trolley",
-            "seriesSlug": "4-poles",
+            "seriesSlug": "tr-60",
             "components": [
                 { "slug": "housing-giovenzana-4p", "quantity": 3 },
                 { "slug": "hanger-giovenzana-4p", "quantity": 9 },
@@ -444,7 +450,7 @@
             "categorySlug": "components",
             "brandSlug": "giovenzana",
             "typeSlug": "trolley",
-            "seriesSlug": "4-poles"
+            "seriesSlug": "tr-60"
         },
         {
             "name": "Подвес",
@@ -459,7 +465,7 @@
             "categorySlug": "components",
             "brandSlug": "giovenzana",
             "typeSlug": "trolley",
-            "seriesSlug": "4-poles"
+            "seriesSlug": "tr-60"
         },
         {
             "name": "Соединение",
@@ -474,7 +480,7 @@
             "categorySlug": "components",
             "brandSlug": "giovenzana",
             "typeSlug": "trolley",
-            "seriesSlug": "4-poles"
+            "seriesSlug": "tr-60"
         },
         {
             "name": "Заглушка",
@@ -489,7 +495,7 @@
             "categorySlug": "components",
             "brandSlug": "giovenzana",
             "typeSlug": "trolley",
-            "seriesSlug": "4-poles"
+            "seriesSlug": "tr-60"
         },
         {
             "name": "Подвод питания",
@@ -504,7 +510,7 @@
             "categorySlug": "components",
             "brandSlug": "giovenzana",
             "typeSlug": "trolley",
-            "seriesSlug": "4-poles"
+            "seriesSlug": "tr-60"
         },
         {
             "name": "Указатель",
@@ -519,7 +525,7 @@
             "categorySlug": "components",
             "brandSlug": "giovenzana",
             "typeSlug": "trolley",
-            "seriesSlug": "4-poles"
+            "seriesSlug": "tr-60"
         },
         {
             "name": "Корпус шинопровода",

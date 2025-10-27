@@ -43,6 +43,9 @@ model Series {
   name        String
   slug        String      @unique
   description String?
+  imageUrl    String?
+  views       Int               @default(0)
+  isFeatured  Boolean           @default(false)
   brandId     Int
   brand       Brand       @relation(fields: [brandId], references: [id])
   busbars     Busbar[]

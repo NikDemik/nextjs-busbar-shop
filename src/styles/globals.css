@@ -4,15 +4,17 @@
 :root {
     --primary: #1e3a3a; /* тёмно-зелёный фон хедера */
     --accent: oklch(72.3% 0.219 149.579); /* зелёный акцент (Submit/Call) #00c951 */
-    --accent-foreground: oklch(62.7% 0.194 149.214); /* #00c951 */
+    --accent-foreground: oklch(62.7% 0.194 149.214); /* #00a63e */
+
+    --background: #ffffff;
+    --foreground: #1e293b;
+
     --color-primary-gradient: linear-gradient(90deg, #1e3a3a, #2c3e50); /* #00a63e */
 
-    --color-bg: #ffffff;
     --color-bg-soft: #f1f5f9;
     --color-surface: #e9f1ed;
     --color-border: #d1d5db;
 
-    --foreground: #1e293b;
     --color-text-muted: #64748b;
 
     --font-sans: 'Manrope', sans-serif;
@@ -29,6 +31,7 @@
 }
 
 @theme inline {
+    --color-background: var(--background);
     --color-foreground: var(--foreground);
     --color-primary: var(--primary);
     --color-accent: var(--accent);

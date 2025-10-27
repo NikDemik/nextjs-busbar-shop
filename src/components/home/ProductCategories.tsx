@@ -54,7 +54,7 @@ export default function ProductCategories() {
                                     src="/image/category/cart-category-bg-img.png"
                                     alt="фон карточки"
                                     fill
-                                    className="object-cover object-center z-0 pointer-events-none opacity-30"
+                                    className="object-cover object-center z-0 pointer-events-none opacity-80 "
                                 />
                             )}
 
@@ -68,7 +68,7 @@ export default function ProductCategories() {
                                         className={`${
                                             index === 1
                                                 ? 'flex items-center justify-center p-4'
-                                                : 'bg-foreground rounded-full p-4 flex items-center justify-center'
+                                                : 'bg-foreground group-hover:bg-accent rounded-full p-4 flex items-center justify-center transition-all duration-300'
                                         }`}
                                     >
                                         <Image
@@ -76,7 +76,7 @@ export default function ProductCategories() {
                                             alt={cat.title}
                                             width={index === 1 ? 400 : 100}
                                             height={index === 1 ? 100 : 100}
-                                            className="object-contain"
+                                            className="object-contain opacity-80 group-hover:opacity-100 transition-all duration-300"
                                         />
                                     </div>
                                 </div>

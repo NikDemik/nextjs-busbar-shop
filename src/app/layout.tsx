@@ -6,7 +6,7 @@ import Header from '@/components/Header';
 
 const inter = Inter({
     subsets: ['cyrillic', 'latin'],
-    weight: ['400', '500', '700'], // или любые нужные
+    weight: ['300', '400', '500', '600', '700', '800'], // или любые нужные
     display: 'swap',
     variable: '--font-inter',
 });
@@ -23,9 +23,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <html lang="ru" className={inter.className}>
             <body className="min-h-screen flex flex-col">
                 <Header />
-                <main className="bg-[var(--color-bg)] text-[var(--color-text)] flex-1">
-                    {children}
-                </main>
+                <main className="bg-background text-foreground flex-1">{children}</main>
                 <Footer />
             </body>
         </html>

@@ -67,6 +67,7 @@ async function main() {
                 name: s.name,
                 slug: s.slug,
                 description: s.description,
+                imageUrl: s.imageUrl,
                 brand: {
                     connect: { slug: s.brandSlug },
                 },
