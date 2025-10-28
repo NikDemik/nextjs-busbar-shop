@@ -42,47 +42,32 @@
     ],
     "series": [
         {
-            "name": "1 шина",
-            "slug": "1-poles-vahle",
-            "brandSlug": "vahle",
-            "imageUrl": "/image/series/main.png"
-        },
-        {
-            "name": "TR 60",
-            "slug": "tr-60",
+            "name": "TR60",
+            "slug": "tr60",
             "brandSlug": "giovenzana",
+            "description": "Троллейный шинопровод Giovenzana TR60 на 40 и 60А",
             "imageUrl": "/image/series/main.png"
         },
         {
-            "name": "TR 85",
-            "slug": "tr-85",
+            "name": "TR85H5",
+            "slug": "tr85h5",
             "brandSlug": "giovenzana",
-            "imageUrl": "/image/series/main.png"
-        },
-        {
-            "name": "4 шины",
-            "slug": "4-poles-vahle",
-            "brandSlug": "vahle",
-            "imageUrl": "/image/series/main.png"
-        },
-        {
-            "name": "5 шин",
-            "slug": "5-poles-vahle",
-            "brandSlug": "vahle",
+            "description": "Троллейный шинопровод Giovenzana серии TR85H5P на 40-70-100-140А",
             "imageUrl": "/image/series/main.png"
         },
         {
             "name": "HFP56",
             "slug": "hfp56",
             "brandSlug": "anneng",
+            "description": "Троллейный шинопровод закрытого типа HFP56 токопроводящая система в ПВХ корпусе. Степень защиты IP 23, на токи от 35 до 240А",
             "imageUrl": "/image/series/main.png"
         }
     ],
     "busbars": [
         {
-            "name": "Шинопровод 60А, 4P",
-            "slug": "busbar-60a-4p",
-            "description": "Шинопровод для токоподвода, 60А, 4 полюса",
+            "name": "Шинопровод Giovenzana TR60 60А, 4P",
+            "slug": "busbar-giovenzana-tr60-60a-4p",
+            "description": "Троллейный шинопровод Giovenzana серии TR60 на 60А, 4 полюса",
             "amperage": 60,
             "imageUrl": "/image/products/busbar.jpg",
             "drawingUrl": "/drawings/busbar-60a.dxf",
@@ -90,7 +75,25 @@
             "categorySlug": "busbars",
             "brandSlug": "giovenzana",
             "typeSlug": "trolley",
-            "seriesSlug": "tr-60",
+            "seriesSlug": "tr60",
+            "components": [
+                { "slug": "housing-giovenzana-4p", "quantity": 1 },
+                { "slug": "hanger-giovenzana-4p", "quantity": 3 },
+                { "slug": "connector-giovenzana-4p", "quantity": 4 }
+            ]
+        },
+        {
+            "name": "Шинопровод Giovenzana TR85H5 100А, 4P",
+            "slug": "busbar-giovenzana-tr85h5-100a-4p",
+            "description": "Троллейный шинопровод Giovenzana серии TR85H5 на 100А, 4 полюса",
+            "amperage": 100,
+            "imageUrl": "/image/products/busbar.jpg",
+            "drawingUrl": "/drawings/busbar-60a.dxf",
+            "specs": { "Номинальная мощность (А)": 100, "Кол-во полюсов": 4 },
+            "categorySlug": "busbars",
+            "brandSlug": "giovenzana",
+            "typeSlug": "trolley",
+            "seriesSlug": "tr85h5",
             "components": [
                 { "slug": "housing-giovenzana-4p", "quantity": 1 },
                 { "slug": "hanger-giovenzana-4p", "quantity": 3 },
@@ -108,7 +111,7 @@
             "categorySlug": "kits",
             "brandSlug": "giovenzana",
             "typeSlug": "trolley",
-            "seriesSlug": "tr-60",
+            "seriesSlug": "tr60",
             "components": [
                 { "slug": "housing-giovenzana-4p", "quantity": 3 },
                 { "slug": "hanger-giovenzana-4p", "quantity": 9 },
@@ -436,6 +439,7 @@
             "seriesSlug": "hfp56"
         }
     ],
+
     "components": [
         {
             "name": "Корпус шинопровода",
@@ -450,7 +454,7 @@
             "categorySlug": "components",
             "brandSlug": "giovenzana",
             "typeSlug": "trolley",
-            "seriesSlug": "tr-60"
+            "seriesSlug": "tr60"
         },
         {
             "name": "Подвес",
@@ -465,7 +469,7 @@
             "categorySlug": "components",
             "brandSlug": "giovenzana",
             "typeSlug": "trolley",
-            "seriesSlug": "tr-60"
+            "seriesSlug": "tr60"
         },
         {
             "name": "Соединение",
@@ -480,7 +484,7 @@
             "categorySlug": "components",
             "brandSlug": "giovenzana",
             "typeSlug": "trolley",
-            "seriesSlug": "tr-60"
+            "seriesSlug": "tr60"
         },
         {
             "name": "Заглушка",
@@ -495,7 +499,7 @@
             "categorySlug": "components",
             "brandSlug": "giovenzana",
             "typeSlug": "trolley",
-            "seriesSlug": "tr-60"
+            "seriesSlug": "tr60"
         },
         {
             "name": "Подвод питания",
@@ -510,7 +514,7 @@
             "categorySlug": "components",
             "brandSlug": "giovenzana",
             "typeSlug": "trolley",
-            "seriesSlug": "tr-60"
+            "seriesSlug": "tr60"
         },
         {
             "name": "Указатель",
@@ -525,52 +529,7 @@
             "categorySlug": "components",
             "brandSlug": "giovenzana",
             "typeSlug": "trolley",
-            "seriesSlug": "tr-60"
-        },
-        {
-            "name": "Корпус шинопровода",
-            "slug": "housing-vahle-5p",
-            "type": "MAIN",
-            "description": "Корпус шинопровода",
-            "imageUrl": "/image/products/component.jpg",
-            "drawingUrl": "/documemts/trolley-60a.pdf",
-            "specs": { "type": "универсальный", "material": "пластик" },
-            "price": 300,
-            "isOptional": false,
-            "categorySlug": "components",
-            "brandSlug": "vahle",
-            "typeSlug": "trolley",
-            "seriesSlug": "5-poles-vahle"
-        },
-        {
-            "name": "Подвес",
-            "slug": "hanger-vahle-5p",
-            "type": "MAIN",
-            "description": "Подвес",
-            "imageUrl": "/image/products/component.jpg",
-            "drawingUrl": "/documemts/trolley-60a.pdf",
-            "specs": { "type": "универсальный", "material": "пластик" },
-            "price": 300,
-            "isOptional": false,
-            "categorySlug": "components",
-            "brandSlug": "vahle",
-            "typeSlug": "trolley",
-            "seriesSlug": "5-poles-vahle"
-        },
-        {
-            "name": "Подвод питания",
-            "slug": "power-supply-vahle-5p",
-            "type": "ADDITIONAL",
-            "description": "Подвод питания",
-            "imageUrl": "/image/products/component.jpg",
-            "drawingUrl": "/documemts/trolley-60a.pdf",
-            "specs": { "type": "универсальный", "material": "пластик" },
-            "price": 300,
-            "isOptional": true,
-            "categorySlug": "components",
-            "brandSlug": "vahle",
-            "typeSlug": "trolley",
-            "seriesSlug": "5-poles-vahle"
+            "seriesSlug": "tr60"
         }
     ]
 }

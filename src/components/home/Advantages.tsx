@@ -31,7 +31,7 @@ export default function Advantages() {
 
     return (
         <section className="w-full bg-white dark:bg-gray-950 py-20 border-t border-gray-100 dark:border-gray-800">
-            <div className="max-w-7xl mx-auto px-6 text-center">
+            <div className="container-padding mx-auto px-6 text-center">
                 <h2 className="text-3xl md:text-4xl font-bold mb-12 text-gray-900 dark:text-white">
                     Почему выбирают нас
                 </h2>

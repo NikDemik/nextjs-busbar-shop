@@ -32,10 +32,11 @@ export default function BrandLogo() {
                     >
                         {Array.from({ length: 2 }).map((_, i) => (
                             <Fragment key={i}>
-                                {logos.map((logo) => (
+                                {logos.map((logo, index) => (
                                     <Image
                                         src={logo.image}
                                         alt={logo.name}
+                                        key={index}
                                         width={200}
                                         height={100}
                                         className=" grayscale hover:grayscale-0 transition "

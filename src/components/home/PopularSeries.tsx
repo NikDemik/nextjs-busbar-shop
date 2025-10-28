@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { prisma } from '@/lib/prisma';
+import { ProductCard } from '@/components/ProductCard';
 
 export default async function PopularSeries() {
     // Получаем 4 самых популярные серии (по просмотрам или по isFeatured(вручную))
@@ -22,43 +23,19 @@ export default async function PopularSeries() {
                 </h2>
 
                 <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-                    {series.map((serie) => (
-                        <div
-                            key={serie.id}
-                            className="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 border border-transparent hover:border-green-500/30"
-                        >
-                            <div className="relative w-full h-48">
-                                <Image
-                                    src={serie.imageUrl || '/placeholder.jpg'}
-                                    alt={serie.name}
-                                    fill
-                                    className="object-cover"
-                                />
-                            </div>
-
-                            <div className="p-6 text-left">
-                                <h3 className="text-xl font-semibold mb-2 text-gray-800 dark:text-white">
-                                    {serie.name}
-                                </h3>
-                                <p className="text-gray-600 dark:text-gray-300 mb-4">
-                                    {serie.description}
-                                </p>
-                                {/* <Link
-                                    href={serie.link}
-                                    className="inline-block text-green-500 font-medium hover:underline"
-                                >
-                                    Подробнее →
-                                </Link> */}
-                            </div>
-                        </div>
+                    {series.map((series) => (
+                        <ProductCard
+                            key={series.id}
+                            name={series.name}
+                            description={series.description || ''}
+                            slug={series.slug}
+                            imageUrl={series.imageUrl || ''}
+                        />
                     ))}
                 </div>
 
                 <div className="mt-12">
-                    <Link
-                        href="/catalog/busbars"
-                        className="inline-block bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-2xl shadow-md transition"
-                    >
+                    <Link href="/catalog/busbars" className="btn">
                         Смотреть все серии
                     </Link>
                 </div>
@@ -66,30 +43,3 @@ export default async function PopularSeries() {
         </section>
     );
 }
-
-// const seriesOld = [
-//         {
-//             title: 'Серия 100А',
-//             description: 'Компактный шинопровод для малых и средних нагрузок.',
-//             image: '/images/series-100a.jpg',
-//             link: '/product/series-100a',
-//         },
-//         {
-//             title: 'Серия 250А',
-//             description: 'Оптимальное решение для производственных помещений.',
-//             image: '/images/series-250a.jpg',
-//             link: '/product/series-250a',
-//         },
-//         {
-//             title: 'Серия 400А',
-//             description: 'Мощный шинопровод для крупных предприятий и объектов.',
-//             image: '/images/series-400a.jpg',
-//             link: '/product/series-400a',
-//         },
-//         {
-//             title: 'Монотроллейный шинопровод',
-//             description: 'Идеален для подвижных крановых систем и линий подачи питания.',
-//             image: '/images/monorail-busbar.jpg',
-//             link: '/product/monorail',
-//         },
-//     ];
