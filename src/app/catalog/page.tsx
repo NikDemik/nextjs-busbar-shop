@@ -18,7 +18,7 @@ export default async function CatalogPage() {
                     <Link
                         key={cat.slug}
                         href={`/catalog/${cat.slug}`}
-                        className="card hover:shadow-lg transition-shadow duration-200"
+                        className="card p-5 hover:shadow-lg transition-shadow duration-200"
                     >
                         <h2 className="text-xl font-semibold mb-2">{cat.name}</h2>
                         <p className="text-muted text-sm mb-4">{cat.description}</p>

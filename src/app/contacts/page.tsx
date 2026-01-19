@@ -4,7 +4,7 @@ export default function ContactsPage() {
     return (
         <div className=" container-padding grid grid-cols-1 md:grid-cols-2 gap-12 mx-auto py-12">
             {/* Форма */}
-            <div className="card">
+            <div className="card p-5">
                 <h2 className="text-2xl font-bold mb-4">Свяжитесь с нами</h2>
                 <p className="text-muted mb-6">Мы ответим вам в ближайшее время</p>
                 <form className="space-y-4">

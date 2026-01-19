@@ -1,4 +1,4 @@
-import '../styles/globals.css';
+import '@/styles/globals.css';
 import { ReactNode } from 'react';
 import { Roboto, Inter, Manrope } from 'next/font/google';
 import Footer from '@/components/Footer';

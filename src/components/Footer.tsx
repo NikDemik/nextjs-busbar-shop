@@ -4,7 +4,7 @@ import contactData from '@/lib/contactData';
 
 export default function Footer() {
     return (
-        <footer className="bg-[var(--color-primary)] text-white text-sm">
+        <footer className="bg-foreground text-white text-sm">
             <div className="container-padding py-12 grid grid-cols-1 md:grid-cols-4 gap-8">
                 {/* Лого и текст */}
                 <div>
@@ -36,8 +36,8 @@ export default function Footer() {
                             </Link>
                         </li>
                         <li>
-                            <Link href="/constructor" className="hover:underline">
-                                Конструктор
+                            <Link href="/configurator" className="hover:underline">
+                                Конфигуратор
                             </Link>
                         </li>
                         <li>

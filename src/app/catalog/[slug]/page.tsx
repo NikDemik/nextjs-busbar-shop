@@ -28,7 +28,7 @@ export default async function CategoryPage(props: { params: { slug: string } }) 
     if (!category) return notFound();
 
     return (
-        <main className="bg-[var(--color-bg)] text-[var(--color-text)] py-12">
+        <main className="bg-(--color-bg) text-(--color-text) py-12">
             <div className="container-padding max-w-7xl mx-auto">
                 <h1 className="text-3xl font-bold mb-2">{category.name}</h1>
                 <p className="text-muted mb-6">
