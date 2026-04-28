@@ -20,9 +20,9 @@ export default function HomePage() {
             <PopularProducts />
             <StageWork />
             <PopularSeries />
-            <Advantages />
             <ConfiguratorBlock />
             <AboutCompany />
+            <Advantages />
             <Documentation />
             <TestimonialsProjectsSection />
             <CallToActionSection />

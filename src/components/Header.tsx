@@ -114,14 +114,14 @@ export default function Header() {
                         </div>
 
                         <Link
-                            href="/constructor"
+                            href="/configurator"
                             className={
-                                isActive('/constructor')
+                                isActive('/configurator')
                                     ? 'text-[var(--color-accent)]'
                                     : 'hover:underline'
                             }
                         >
-                            Конструктор
+                            Конфигуратор
                         </Link>
                         <Link
                             href="/news"
@@ -208,8 +208,8 @@ export default function Header() {
                                     </Link>
                                 </div>
                             </details>
-                            <Link href="/constructor" className="block">
-                                Конструктор
+                            <Link href="/configurator" className="block">
+                                Конфигуратор
                             </Link>
                             <Link href="/news" className="block">
                                 Новости

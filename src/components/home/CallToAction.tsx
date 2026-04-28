@@ -31,9 +31,9 @@ export default function CallToActionFormSection() {
     };
 
     return (
-        <section className="relative w-full py-24 bg-gradient-to-br from-green-700 to-emerald-800 text-white overflow-hidden">
+        <section className="relative w-full py-24 bg-foreground text-white">
             {/* Декоративный фон */}
-            <div className="absolute inset-0 bg-[url('/images/pattern-grid.svg')] opacity-10" />
+            <div className="absolute h-full inset-x-60 inset-y-40 bg-[url('/image/component/section-bg-img.svg')] opacity-3 bg-no-repeat" />
 
             <div className="max-w-6xl mx-auto px-6 relative z-10">
                 <motion.div

@@ -42,15 +42,15 @@ export default function StageWork() {
 
     return (
         <section className="w-full dark:bg-gray-900 py-10">
-            <div className="max-w-7xl mx-auto p-6 bg-neutral-100 dark:bg-neutral-900 rounded-2xl text-center">
-                <h2 className="text-xl md:text-xl font-normal text-gray-500 dark:text-white">
+            <div className="max-w-7xl mx-auto p-6 bg-foreground dark:bg-neutral-900 rounded-2xl text-center">
+                <p className="text-xl md:text-xl font-normal text-gray-500 dark:text-white">
                     [ Как мы работаем ]
-                </h2>
+                </p>
                 <div className=" flex justify-between flex-col sm:flex-row gap-4 items-center py-10">
-                    <div className="text-2xl md:text-3xl lg:text-4xl text-start lg:leading-10">
+                    <h2 className=" text-white text-2xl md:text-3xl lg:text-4xl text-start lg:leading-10">
                         Путь к <span className="text-accent">вашему</span>
                         <br /> надежному <span className="text-accent">шинопроводу</span>
-                    </div>
+                    </h2>
                     <div>
                         <Button>Отправить запрос</Button>
                     </div>
