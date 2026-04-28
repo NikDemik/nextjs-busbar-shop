@@ -1,10 +1,16 @@
+<<<<<<< HEAD
 import { PrismaClient } from '@/generated/prisma';
 import fs from 'fs/promises';
 import path from 'path';
+=======
+// import { PrismaClient } from '@prisma/client';
+import { PrismaClient } from '@/generated/prisma';
+>>>>>>> 7cd5da2b453241c97422acec356564ce059371a5
 
 const prisma = new PrismaClient();
 
 async function main() {
+<<<<<<< HEAD
     const filePath = path.join(__dirname, 'seed-data.json');
     const data = JSON.parse(await fs.readFile(filePath, 'utf-8'));
 
@@ -149,3 +155,33 @@ main()
     .finally(async () => {
         await prisma.$disconnect();
     });
+=======
+	const category = await prisma.category.create({
+		data: {
+			name: 'Шинопровод 60А, 4 полюса',
+			slug: 'busbar-60a-4p',
+			products: {
+				create: {
+					name: 'Базовый комплект 60А',
+					slug: 'base-60a-kit',
+					description: 'Базовый комплект троллейного шинопровода для промышленных нужд.',
+					imageUrl: '/images/busbar-60a.jpg',
+					specs: {
+						poles: 4,
+						amperage: 60,
+						length: '10 м',
+					},
+					drawingUrl: '/drawings/60a.dxf',
+				},
+			},
+		},
+		include: { products: true },
+	});
+
+	console.log('Категория и продукт созданы:', category);
+}
+
+main()
+	.catch(console.error)
+	.finally(() => prisma.$disconnect());
+>>>>>>> 7cd5da2b453241c97422acec356564ce059371a5
